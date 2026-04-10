@@ -82,19 +82,16 @@ export default function AddAddressModal({onClose, onAdd, editAddress}:{
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
         <div className="relative w-[420px] rounded-2xl bg-white p-6 shadow-2xl">
-            
-            {/* Close Button */}
+
             <button className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200"
             onClick={onClose}>
             <FontAwesomeIcon icon={faTimes} className="h-4 w-4" />
             </button>
 
-            {/* Title */}
             <h2 className="mb-6 text-xl font-semibold text-gray-800">
             {editAddress ? "Edit Address" : "Add New Address"}
             </h2>
 
-            {/* Address Name */}
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-4"> 
                 <label className="mb-1 block text-sm font-medium text-gray-600">
@@ -109,7 +106,6 @@ export default function AddAddressModal({onClose, onAdd, editAddress}:{
                 {errors.name && <p className="text-red-500 mt-0.5 text-sm">*{errors.name.message}</p>}
                 </div>
 
-                {/* Full Address */}
                 <div className="mb-4">
                 <label className="mb-1 block text-sm font-medium text-gray-600">
                     Full Address
@@ -123,7 +119,6 @@ export default function AddAddressModal({onClose, onAdd, editAddress}:{
                 {errors.details && <p className="text-red-500 mt-0.5 text-sm">*{errors.details.message}</p>}
                 </div>
 
-                {/* Phone & City Row */}
                 <div className="mb-6 grid grid-cols-2 gap-4">
                 <div>
                     <label className="mb-1 block text-sm font-medium text-gray-600">
@@ -152,7 +147,6 @@ export default function AddAddressModal({onClose, onAdd, editAddress}:{
                 </div>
                 </div>
 
-                {/* Buttons */}
                 <div className="flex justify-between gap-4">
                 <button className="w-1/2 rounded-lg bg-gray-100 py-2 text-sm font-medium text-gray-600 hover:bg-gray-200"
                 onClick={onClose}

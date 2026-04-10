@@ -12,7 +12,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 
-
 export default function SignupForm() {
     const [show, setShow] = useState(false);
     const [reShow, setReShow] = useState(false);
@@ -32,7 +31,6 @@ export default function SignupForm() {
         mode: "onSubmit",
         reValidateMode: "onChange"
     });
-    
 
     const onSubmit:SubmitHandler<SignUpFormValues> = async (values)=>{
         try {
@@ -140,7 +138,6 @@ export default function SignupForm() {
                 </button>
                 {errors.password && <p className="text-red-500 mt-0.5">*{errors.password.message}</p>}
 
-                
                 <div className="password-strength flex gap-2 items-center mt-2">
                     <div className="bar rounded-xl overflow-hidden w-full h-1 bg-gray-200">
                     <div
@@ -150,7 +147,6 @@ export default function SignupForm() {
                     </div>
                     {strength.label && <span className="text-sm capitalize">{strength.label}</span>}
                 </div>
-                
 
             </div>
             <div className="repassword flex flex-col gap-1 relative">

@@ -4,7 +4,6 @@ export interface ProductsResponse {
     data: Product[];
 }
 
-// Metadata
 export interface Metadata {
     currentPage: number;
     numberOfPages: number;
@@ -12,7 +11,6 @@ export interface Metadata {
     nextPage?: number;
 }
 
-// Product
 export interface Product {
     _id: string;
     id: string;
@@ -30,11 +28,10 @@ export interface Product {
     category: Category;
     brand: Brand;
     ratingsAverage: number;
-    createdAt: string;   // ISO date string
-    updatedAt: string;   // ISO date string
+    createdAt: string;   
+    updatedAt: string;   
 }
 
-// SubCategory
 export interface SubCategory {
     _id: string;
     name: string;
@@ -42,7 +39,6 @@ export interface SubCategory {
     category: string;
 }
 
-// Category
 export interface Category {
     _id: string;
     name: string;
@@ -50,7 +46,6 @@ export interface Category {
     image: string;
 }
 
-// Brand
 export interface Brand {
     _id: string;
     name: string;

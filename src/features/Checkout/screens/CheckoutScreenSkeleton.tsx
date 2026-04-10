@@ -4,7 +4,7 @@ export default function CheckoutScreenSkeleton() {
     return (
         <div className="bg-linear-to-b from-gray-50 to-white min-h-screen py-8 animate-pulse">
             <div className="container mx-auto px-4">
-                {/* Checkout Header Skeleton */}
+                
                 <div className="mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div className="space-y-2">
                         <div className="h-8 w-64 bg-gray-200 rounded"></div>
@@ -14,9 +14,9 @@ export default function CheckoutScreenSkeleton() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Left Column Skeleton */}
+                    
                     <div className="lg:col-span-2 space-y-6">
-                        {/* Addresses / Shipping Form Skeleton */}
+                        
                         <div className="space-y-4">
                             {[...Array(2)].map((_, i) => (
                                 <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
@@ -28,7 +28,6 @@ export default function CheckoutScreenSkeleton() {
                             ))}
                         </div>
 
-                        {/* Payment Methods Skeleton */}
                         <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
                             <div className="h-6 bg-gray-200 rounded w-1/3 mb-4"></div>
                             <div className="space-y-2">
@@ -39,15 +38,14 @@ export default function CheckoutScreenSkeleton() {
                         </div>
                     </div>
 
-                    {/* Right Column Order Summary Skeleton */}
                     <div className="lg:col-span-1">
                         <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
-                            {/* Header */}
+                            
                             <div className="bg-linear-to-r from-green-500 to-green-600 px-6 py-4">
                                 <div className="h-6 w-32 bg-gray-200 rounded"></div>
                             </div>
                             <div className="p-5 space-y-4">
-                                {/* Cart items review skeleton */}
+                                
                                 <div className="space-y-3 max-h-56 overflow-y-auto pr-1">
                                     {[...Array(3)].map((_, i) => (
                                         <div key={i} className="h-16 bg-gray-200 rounded w-full"></div>
@@ -55,7 +53,6 @@ export default function CheckoutScreenSkeleton() {
                                 </div>
                                 <hr className="border-gray-100" />
 
-                                {/* Price Summary Skeleton */}
                                 <div className="space-y-2">
                                     <div className="flex justify-between">
                                         <div className="h-4 w-20 bg-gray-200 rounded"></div>
@@ -72,10 +69,8 @@ export default function CheckoutScreenSkeleton() {
                                     </div>
                                 </div>
 
-                                {/* Proceed Button Skeleton */}
                                 <div className="h-12 bg-gray-200 rounded w-full mt-4"></div>
 
-                                {/* Trust Badges Skeleton */}
                                 <div className="flex items-center justify-center gap-4 mt-4">
                                     {[...Array(3)].map((_, i) => (
                                         <div key={i} className="h-6 w-20 bg-gray-200 rounded"></div>

@@ -85,13 +85,11 @@ export default function ReviewsTab({product , onReviewsChange}:{product:Product,
         fetchReviews();
     }, [_id]);
 
-
     return (
         <div className="w-full bg-white rounded-3xl border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.06)] p-10">
 
         <div className="grid lg:grid-cols-3 gap-10 items-center">
 
-            {/* Rating Card */}
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-500 to-emerald-600 p-10 text-white shadow-xl">
 
             <div className="absolute inset-0 bg-white/5 backdrop-blur-xl"></div>
@@ -118,7 +116,6 @@ export default function ReviewsTab({product , onReviewsChange}:{product:Product,
             </div>
             </div>
 
-            {/* Rating Distribution */}
             <div className="lg:col-span-2">
             <h3 className="text-xl font-semibold text-gray-900 mb-8">
                 Rating Distribution
@@ -155,7 +152,6 @@ export default function ReviewsTab({product , onReviewsChange}:{product:Product,
         </div>
         <div className="my-14 border-t border-gray-100"></div>
 
-        {/* ================= HEADER ================= */}
         <div className="flex justify-between items-center mb-8">
             <h3 className="text-xl font-semibold text-gray-900">
             Customer Reviews
@@ -180,7 +176,7 @@ export default function ReviewsTab({product , onReviewsChange}:{product:Product,
                 key={review._id}
                 className="p-5 sm:p-6 md:p-6 rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white relative"
                 >
-                {/* Edit/Delete icons */}
+                
                 {isAuthenticated && review.user._id === currentUserId && (
                 <div className="absolute top-4 right-4 flex gap-3 opacity-70 hover:opacity-100 transition">
                     <FontAwesomeIcon
@@ -201,12 +197,11 @@ export default function ReviewsTab({product , onReviewsChange}:{product:Product,
                 )}
 
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                    {/* Avatar */}
+                    
                     <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-emerald-600 text-white flex items-center justify-center font-semibold text-lg sm:text-xl md:text-2xl shadow-md shrink-0">
                     {review.user.name[0].toUpperCase()}
                     </div>
 
-                    {/* Content */}
                     <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
                         <div>
@@ -225,15 +220,12 @@ export default function ReviewsTab({product , onReviewsChange}:{product:Product,
                         </div>
                         </div>
 
-
                     </div>
 
-                    {/* Review Text */}
                     <div className="mt-2 sm:mt-3">
                         {editingReviewId === review._id ? (
                         <div className="mt-3 space-y-3">
 
-                            {/* Editable Stars */}
                             <div className="flex text-yellow-400 text-lg">
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <FontAwesomeIcon
@@ -254,7 +246,6 @@ export default function ReviewsTab({product , onReviewsChange}:{product:Product,
                             rows={3}
                             />
 
-                            {/* Buttons */}
                             <div className="flex gap-3">
                             <button
                                 onClick={handleUpdateReview}

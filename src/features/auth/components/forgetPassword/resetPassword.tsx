@@ -61,7 +61,7 @@ export default function ResetPasswordForm() {
         transition-opacity duration-700 ease-out
         ${animate ? "opacity-100" : "opacity-0"}`}
         >
-        {/* Logo */}
+        
         <h1 className="text-4xl font-extrabold mb-3 text-gray-900 tracking-tight">
             <span className="text-green-600">Fresh</span>Cart
         </h1>
@@ -73,7 +73,6 @@ export default function ResetPasswordForm() {
             Your new password must be different from previously used passwords.
         </p>
 
-        {/* Step Indicator */}
         <div className="flex items-center justify-between mb-12">
             <StepCircle active icon={faEnvelope} />
             <StepLine active />
@@ -82,9 +81,8 @@ export default function ResetPasswordForm() {
             <StepCircle active icon={faLock} />
         </div>
 
-        {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)}>
-            {/* New Password */}
+            
             <div className="relative z-0 w-full mb-8 group">
             <input
                 type="password"
@@ -114,7 +112,6 @@ export default function ResetPasswordForm() {
                 )}
             </div>
 
-            {/* Confirm Password */}
             <div className="relative z-0 w-full mb-10 group">
             <input
                 type="password"
@@ -144,7 +141,6 @@ export default function ResetPasswordForm() {
                 )}
             </div>
 
-            {/* Submit Button */}
             <button
             type="submit"
             disabled={loading}
@@ -154,7 +150,6 @@ export default function ResetPasswordForm() {
             </button>
         </form>
 
-        {/* Back to login */}
         <div className="mt-8 text-center">
             <Link
             href="/login"

@@ -8,7 +8,6 @@ export default function WishlistEmpty() {
         <div className="min-h-screen py-8 flex flex-col">
         <div className="container mx-auto px-4 flex flex-col flex-grow">
 
-            {/* Header */}
             <div className="mb-8">
             <nav className="flex items-center gap-2 text-sm text-gray-500 mb-4 select-none">
                 <Link href={"/"} className="hover:text-green-500 transition">
@@ -26,7 +25,6 @@ export default function WishlistEmpty() {
             </div>
             </div>
 
-            {/* Empty State */}
             <div className="flex flex-col flex-grow items-center justify-center text-center px-4">
             <div className="mb-6 text-red-500">
                 <FontAwesomeIcon icon={faHeart} size="6x" />

@@ -52,7 +52,6 @@ import { getReviews } from "../server/reviews.action";
     return (
         <div className="w-full bg-white rounded-3xl border border-gray-100 shadow-sm">
 
-        {/* ================= TAB HEADER ================= */}
         <div className="flex flex-wrap items-center border-b border-gray-100">
 
             {tabs.map((tab) => {
@@ -72,7 +71,6 @@ import { getReviews } from "../server/reviews.action";
                 <FontAwesomeIcon icon={tab.icon} />
                 {tab.label}
 
-                {/* Active Underline */}
                 {isActive && (
                     <span className="absolute bottom-0 left-0 w-full h-[3px] bg-emerald-600 rounded-full"></span>
                 )}
@@ -81,7 +79,6 @@ import { getReviews } from "../server/reviews.action";
             })}
         </div>
 
-        {/* ================= TAB CONTENT ================= */}
         <div className="p-6 sm:p-8">
             {activeTab === "details" && <ProductsDetailsTab product={product} />}
             {activeTab === "reviews" && <ReviewsTab product={product} onReviewsChange={(count: number) => setReviewsCount(count)}  />}

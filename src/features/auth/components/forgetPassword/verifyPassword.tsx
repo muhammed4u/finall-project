@@ -16,7 +16,7 @@ export default function VerifyCodeForm({ email }: { email: string }) {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
         const val = e.target.value;
-        if (!/^\d?$/.test(val)) return; // Only allow one digit 0-9
+        if (!/^\d?$/.test(val)) return; 
 
         const newCode = [...codeDigits];
         newCode[i] = val;
@@ -89,7 +89,6 @@ export default function VerifyCodeForm({ email }: { email: string }) {
             Enter the 6-digit code sent to <span className="font-medium">{email}</span>
         </p>
 
-        {/* Step Indicator */}
         <div className="flex justify-center items-center mb-10 space-x-2 sm:space-x-6">
             <StepCircle filled={true} icon="check" />
             <StepLine filled={true} />
@@ -98,7 +97,6 @@ export default function VerifyCodeForm({ email }: { email: string }) {
             <StepCircle filled={false} icon="lock" />
         </div>
 
-        {/* Verification Code Inputs */}
         <form onSubmit={handleSubmit} className=" space-x-3 mb-6">
         <div className="flex justify-between gap-2 sm:gap-3">
         {codeDigits.map((digit, i) => (
@@ -121,7 +119,6 @@ export default function VerifyCodeForm({ email }: { email: string }) {
                 {message}
             </p>)}
 
-            {/* Resend code */}
             <p className="text-center text-sm text-gray-600 mb-4 mt-4">
                 Didn't receive the code?{" "}
                 <button
@@ -134,7 +131,6 @@ export default function VerifyCodeForm({ email }: { email: string }) {
                 </button>
             </p>
 
-            {/* Verify button */}
             <button
                 type="submit"
                 disabled={loading}
@@ -171,7 +167,6 @@ export default function VerifyCodeForm({ email }: { email: string }) {
             </button>
         </form>
 
-        {/* Change email link */}
         <div className="mt-6 text-center">
             <Link href="/forget-password" className="inline-flex items-center text-gray-600 hover:text-green-600">
             <svg

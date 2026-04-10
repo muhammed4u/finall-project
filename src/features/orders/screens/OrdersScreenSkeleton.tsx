@@ -3,13 +3,13 @@ import { faBox } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function OrdersScreenSkeleton() {
-    // We’ll show 3 skeleton order cards as placeholders
+    
     const skeletonArray = [1, 2, 3];
 
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="mb-8">
-                {/* Skeleton Header */}
+                
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-pulse">
                     <div className="flex items-center gap-4">
                         <div className="w-14 h-14 rounded-2xl bg-gray-200 flex items-center justify-center">
@@ -24,7 +24,6 @@ export default function OrdersScreenSkeleton() {
                 </div>
             </div>
 
-            {/* Skeleton Orders */}
             <div className="space-y-4">
                 {skeletonArray.map((_, idx) => (
                     <div key={idx} className="p-4 bg-white rounded-2xl shadow border border-gray-100 animate-pulse">

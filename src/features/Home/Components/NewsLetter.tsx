@@ -55,7 +55,7 @@ import {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
             }`}
         >
-            {/* Left*/}
+            
             <div className="flex flex-col items-center md:items-start text-center md:text-left gap-5">
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center animate-bounce">
                 <FontAwesomeIcon icon={faEnvelopeOpenText} className="text-2xl" />
@@ -91,7 +91,6 @@ import {
             )}
             </div>
 
-            {/* Right */}
             <div className="flex flex-col gap-5 w-full md:w-1/3">
             {perks.map((perk, i) => (
                 <div

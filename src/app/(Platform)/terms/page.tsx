@@ -24,7 +24,7 @@ export default function TermsOfService() {
             animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
         >
-            {/* Header */}
+            
             <header className="mb-8 flex items-center space-x-4">
             <div className="bg-green-600 p-3 rounded-full text-white shadow-lg animate-pulse">
                 <FontAwesomeIcon icon={faGavel} className="text-3xl" />
@@ -34,14 +34,12 @@ export default function TermsOfService() {
             </h1>
             </header>
 
-            {/* Introduction */}
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
             Welcome to Fresh Cart! By using our services, you agree to comply with these Terms of Service. Please read them carefully.
             </p>
 
-            {/* Sections */}
             <section className="space-y-8">
-            {/* Account Responsibilities */}
+            
             <div
                 className={`${sectionClass} ${animate ? sectionClassActive : ""}`}
             >
@@ -54,7 +52,6 @@ export default function TermsOfService() {
                 </p>
             </div>
 
-            {/* Prohibited Actions */}
             <div
                 className={`${sectionClass} ${animate ? sectionClassActive : ""} delay-100`}
             >
@@ -67,7 +64,6 @@ export default function TermsOfService() {
                 </p>
             </div>
 
-            {/* Purchases and Payments */}
             <div
                 className={`${sectionClass} ${animate ? sectionClassActive : ""} delay-200`}
             >
@@ -80,7 +76,6 @@ export default function TermsOfService() {
                 </p>
             </div>
 
-            {/* Modifications to Terms */}
             <div
                 className={`${sectionClass} ${animate ? sectionClassActive : ""} delay-300`}
             >
@@ -94,7 +89,6 @@ export default function TermsOfService() {
             </div>
             </section>
 
-            {/* Footer */}
             <footer className="mt-12 text-sm text-gray-500 text-center">
             &copy; {new Date().getFullYear()} Fresh Cart. All rights reserved.
             </footer>

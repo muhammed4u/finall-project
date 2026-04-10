@@ -20,11 +20,9 @@ export default function Navbar() {
   return (
     <header className="w-full">
 
-      {/* ================= TOP BAR ================= */}
       <div className="bg-gray-100 text-sm text-gray-600 border-b">
         <div className="container mx-auto px-6 py-2 flex justify-between items-center">
 
-          {/* Left */}
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <FontAwesomeIcon icon={faTruck} className="text-green-600" />
@@ -37,7 +35,6 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Right */}
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <FontAwesomeIcon icon={faPhone} />
@@ -65,11 +62,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ================= MAIN NAVBAR (STICKY) ================= */}
       <div className="bg-white sticky top-0 z-50 shadow-md">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
 
-          {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="text-green-600 text-2xl">
               <FontAwesomeIcon icon={faCartShopping} />
@@ -79,7 +74,6 @@ export default function Navbar() {
             </span>
           </div>
 
-          {/* Search */}
           <div className="flex-1 mx-10 relative">
             <input
               type="text"
@@ -91,7 +85,6 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Navigation Links */}
           <nav className="flex items-center gap-8 text-gray-700 font-medium">
             <Link href="#" className="hover:text-green-600 transition">
               Home
@@ -107,7 +100,6 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Right Icons */}
           <div className="flex items-center gap-6 ml-8">
 
             <div className="flex items-center gap-2 cursor-pointer hover:text-green-600 transition">

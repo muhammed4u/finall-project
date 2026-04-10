@@ -11,7 +11,6 @@ export default function DealsBanners() {
             <div className="container mx-auto">
                 <div className="grid md:grid-cols-2 gap-6">
 
-                    {/* Deal of the day */}
                     <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 p-8 text-white transform transition duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl">
 
                         <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 animate-pulse"></div>
@@ -59,7 +58,6 @@ export default function DealsBanners() {
                         </div>
                     </div>
 
-                    {/* New Arrivals */}
                     <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-400 to-rose-500 p-8 text-white transform transition duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl">
 
                         <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 animate-pulse"></div>

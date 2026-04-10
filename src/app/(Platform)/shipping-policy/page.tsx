@@ -23,7 +23,7 @@ export default function ShippingPolicy() {
             animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
         >
-            {/* Header */}
+            
             <header className="mb-8 flex items-center space-x-4">
             <div className="bg-green-600 p-3 rounded-full text-white shadow-lg animate-pulse">
                 <FontAwesomeIcon icon={faTruck} className="text-3xl" />
@@ -33,14 +33,12 @@ export default function ShippingPolicy() {
             </h1>
             </header>
 
-            {/* Introduction */}
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
             At Fresh Cart, we ensure your products are delivered safely and promptly. Please review our shipping policy carefully to understand our delivery process.
             </p>
 
-            {/* Sections */}
             <section className="space-y-8">
-            {/* Processing Time */}
+            
             <div
                 className={`${sectionClass} ${animate ? sectionClassActive : ""}`}
             >
@@ -53,7 +51,6 @@ export default function ShippingPolicy() {
                 </p>
             </div>
 
-            {/* Shipping Methods */}
             <div
                 className={`${sectionClass} ${animate ? sectionClassActive : ""} delay-100`}
             >
@@ -66,7 +63,6 @@ export default function ShippingPolicy() {
                 </p>
             </div>
 
-            {/* Tracking */}
             <div
                 className={`${sectionClass} ${animate ? sectionClassActive : ""} delay-200`}
             >
@@ -79,7 +75,6 @@ export default function ShippingPolicy() {
                 </p>
             </div>
 
-            {/* Delivery Areas */}
             <div
                 className={`${sectionClass} ${animate ? sectionClassActive : ""} delay-300`}
             >
@@ -93,7 +88,6 @@ export default function ShippingPolicy() {
             </div>
             </section>
 
-            {/* Footer */}
             <footer className="mt-12 text-sm text-gray-500 text-center">
             &copy; {new Date().getFullYear()} Fresh Cart. All rights reserved.
             </footer>

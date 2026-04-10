@@ -1,4 +1,4 @@
-// Root response type
+
 export interface CartResponse {
     status: string;
     numOfCartItems: number;
@@ -6,7 +6,6 @@ export interface CartResponse {
     data: CartData;
     }
 
-    // Main cart data
     export interface CartData {
     _id: string;
     cartOwner: string;
@@ -17,7 +16,6 @@ export interface CartResponse {
     totalCartPrice: number;
     }
 
-    // Product in the cart
     export interface CartProduct {
     count: number;
     _id: string;
@@ -25,7 +23,6 @@ export interface CartResponse {
     price: number;
     }
 
-    // Product details
     export interface Product {
     _id: string;
     title: string;
@@ -38,7 +35,6 @@ export interface CartResponse {
     id: string;
     }
 
-    // Category of the product
     export interface Category {
     _id: string;
     name: string;
@@ -46,15 +42,13 @@ export interface CartResponse {
     image?: string; 
     }
 
-    // Subcategory of the product
     export interface Subcategory {
     _id: string;
     name: string;
     slug: string;
-    category: string; // category ID
+    category: string; 
     }
 
-    // Brand details
     export interface Brand {
     _id: string;
     name: string;

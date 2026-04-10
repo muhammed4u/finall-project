@@ -13,7 +13,6 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-10">
             <div className="grid md:grid-cols-2 xl:grid-cols-5 gap-8">
 
-            {/* Logo & Description */}
             <div className="xl:col-span-2 space-y-5">
                 <Image src={freshCartLogo} alt="Fresh Cart Logo" className="w-40 transition-transform duration-300 hover:scale-105"/>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -21,7 +20,6 @@ export default function Footer() {
                 from clothing to electronics. Enjoy a seamless shopping experience with premium support.
                 </p>
 
-                {/* Social Icons */}
                 <ul className="flex items-center gap-4 text-lg">
                 {[faFacebookF, faTwitter, faInstagram, faPinterestP].map((icon, idx) => (
                     <li key={idx}>
@@ -36,7 +34,6 @@ export default function Footer() {
                 </ul>
             </div>
 
-            {/* Categories */}
             <div>
                 <h2 className="text-xl font-bold mb-5 text-gray-900">Categories</h2>
                 <ul className="space-y-3 text-sm">
@@ -56,7 +53,6 @@ export default function Footer() {
                 </ul>
             </div>
 
-            {/* Quick Links */}
             <div>
                 <h2 className="text-xl font-bold mb-5 text-gray-900">Quick Links</h2>
                 <ul className="space-y-3 text-sm">
@@ -76,7 +72,6 @@ export default function Footer() {
                 </ul>
             </div>
 
-            {/* Customer Service */}
             <div>
                 <h2 className="text-xl font-bold mb-5 text-gray-900">Customer Service</h2>
                 <ul className="space-y-3 text-sm">
@@ -98,7 +93,6 @@ export default function Footer() {
 
             </div>
 
-            {/* Footer Bottom */}
             <div className="flex flex-col md:flex-row justify-between items-center mt-10 pt-6 border-t border-gray-200 text-gray-500">
             <p className="text-sm">&copy; {new Date().getFullYear()} FreshCart. All rights reserved.</p>
             <Image src={freshCartMiniLogo} alt="Fresh Cart" className="w-10 mt-4 md:mt-0 transition-transform duration-300 hover:scale-110"/>

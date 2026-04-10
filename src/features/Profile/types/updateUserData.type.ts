@@ -15,7 +15,6 @@ export type UserResponse = {
     user: User;
 };
 
-// types/updateUserResponse.type.ts
 export interface UpdateUserResponse {
     message: "success" | "fail";
     errors?: {

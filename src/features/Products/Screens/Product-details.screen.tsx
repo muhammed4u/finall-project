@@ -41,8 +41,6 @@ export default function ProductDetailsScreen({ productId }: { productId: string 
         fetchProduct();
     }, [productId]);
 
-
-      
         useEffect(() => {
         const fetchWishlist = async () => {
             try {
@@ -72,7 +70,7 @@ export default function ProductDetailsScreen({ productId }: { productId: string 
                 {similarProducts.length > 0 && (
                   <section className="container mx-auto px-4 my-12">
                     <div className="bg-gray-50 rounded-3xl shadow-xl p-6 md:p-10">
-                      {/* Header */}
+                      
                       <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
                         <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900">
                           You May Also Like
@@ -82,18 +80,15 @@ export default function ProductDetailsScreen({ productId }: { productId: string 
                         </p>
                       </div>
 
-                      {/* Swiper */}
                       <div className="relative">
                         <SimilarProductsSwiper products={similarProducts} />
-                        
-                        {/* arrows*/}
+
                         <div className="absolute top-1/2 transform -translate-y-1/2 left-0 z-10">
                         </div>
                         <div className="absolute top-1/2 transform -translate-y-1/2 right-0 z-10">
                         </div>
                       </div>
 
-                      {/* Call-to-action */}
                       <div className="mt-6 text-center">
                         <span className="text-gray-500 text-sm md:text-base">
                           Explore more trending items curated just for you

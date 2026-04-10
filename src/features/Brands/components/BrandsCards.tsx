@@ -5,7 +5,6 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import {  Brand } from "../Types/brands.types"
 import Link from "next/link"
 
-
 export default function BrandCard({info}:{info:Brand}) {
 
     const {image, name, _id} = info
@@ -18,7 +17,6 @@ export default function BrandCard({info}:{info:Brand}) {
                         hover:-translate-y-2 
                         transition-all duration-500 ease-out cursor-pointer">
 
-        {/* Inner Logo Box */}
         <div className="bg-gray-50 rounded-2xl flex items-center justify-center h-36 
                         border border-gray-100 
                         group-hover:bg-white 
@@ -32,7 +30,6 @@ export default function BrandCard({info}:{info:Brand}) {
             />
         </div>
 
-        {/* Brand Name */}
         <div className="flex items-center justify-between mt-6">
             <p className="font-semibold text-gray-800 tracking-wide 
                         group-hover:text-purple-600 transition-colors duration-300">

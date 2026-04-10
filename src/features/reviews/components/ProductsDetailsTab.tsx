@@ -18,8 +18,7 @@ import { Product } from "@/features/Products/Types/Products.types";
         const {brand, category, subcategory, sold ,description} = product
     return (
         <div className="w-full bg-white rounded-xl shadow-sm p-6 space-y-8">
-        
-        {/* About Section */}
+
         <div>
             <h2 className="text-lg font-semibold text-gray-800 mb-3">
             About this Product
@@ -30,10 +29,8 @@ import { Product } from "@/features/Products/Types/Products.types";
             </p>
         </div>
 
-        {/* Two Columns Section */}
         <div className="grid md:grid-cols-2 gap-6">
-            
-            {/* Product Information Card */}
+
             <div className="bg-gray-50 rounded-xl p-6 border-2 border-green-500">
             <h3 className="text-md font-semibold text-gray-800 mb-5 flex items-center gap-2">
                 <FontAwesomeIcon icon={faBoxOpen} className="text-gray-600" />
@@ -84,7 +81,6 @@ import { Product } from "@/features/Products/Types/Products.types";
             </div>
             </div>
 
-            {/* Key Features Card */}
             <div className="bg-gray-50 rounded-xl p-6 border-2 border-green-500">
             <h3 className="text-md font-semibold text-gray-800 mb-5 flex items-center gap-2">
                 <FontAwesomeIcon icon={faMedal} className="text-gray-600" />

@@ -8,7 +8,6 @@ export default function AboutPage() {
     return (
         <div className="min-h-screen bg-linear-to-b from-white via-green-50 to-white text-gray-800">
 
-        {/* ================= HERO SECTION ================= */}
         <section className="relative overflow-hidden py-24 px-6 text-center">
             <div className="max-w-4xl mx-auto">
 
@@ -31,13 +30,10 @@ export default function AboutPage() {
             </div>
             </div>
 
-            {/* Floating Background Blur */}
             <div className="absolute -top-20 -left-20 w-72 h-72 bg-green-200 rounded-full blur-3xl opacity-40 animate-pulse"></div>
             <div className="absolute bottom-0 -right-20 w-72 h-72 bg-emerald-300 rounded-full blur-3xl opacity-40 animate-pulse"></div>
         </section>
 
-
-        {/* ================= FEATURES SECTION ================= */}
         <section className="py-20 px-6">
             <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
 
@@ -66,8 +62,6 @@ export default function AboutPage() {
             </div>
         </section>
 
-
-        {/* ================= STORY SECTION ================= */}
         <section className="py-20 px-6 bg-white">
             <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
@@ -97,8 +91,6 @@ export default function AboutPage() {
             </div>
         </section>
 
-
-        {/* ================= CTA SECTION ================= */}
         <section className="py-20 px-6 text-center bg-linear-to-r from-green-500 to-emerald-400 text-white">
 
             <h2 className="text-4xl font-bold mb-6">

@@ -11,7 +11,6 @@ interface GetProductsFilters {
     sort?: string;
 }
 
-
 export async function getProducts(filters?: GetProductsFilters):Promise<ProductsResponse>{
     try {
         const params: Record<string, any> = {};
@@ -57,5 +56,4 @@ export async function getProductById({id}:{id:string}):Promise<SingleProductResp
         throw error
     }
 }
-
 

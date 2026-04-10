@@ -33,7 +33,6 @@ export default function WishlistScreen() {
     fetchWishlist();
     }, [dispatch]);
 
-
     if(isLoading) {
         return <WishlistLoadingScreen/>
     }
@@ -41,12 +40,10 @@ export default function WishlistScreen() {
     return <WishlistEmpty />;
     }
 
-
     return (
         <div className=" min-h-screen py-8">
             <div className="container mx-auto px-4">
 
-                {/* Header */}
                 <div className="mb-8">
                     <nav className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                         <Link href={"/"} className="hover:text-green-500 transition">
@@ -73,17 +70,14 @@ export default function WishlistScreen() {
                     </div>
                 </div>
 
-                {/* Wishlist Items */}
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
 
-                    {/* Table Header */}
                     <div className="hidden md:grid grid-cols-4 bg-gray-50 px-6 py-4 text-sm font-medium text-gray-500">
                         <span className="col-span-2">Product</span>
                         <span>Price</span>
                         <span className="text-right">Actions</span>
                     </div>
 
-                    {/* Items */}
                     <div className="divide-y divide-gray-100 ">
                         {data.map((item, index) => (
                             <WishlistItem key={index} itemInfo={item} />
@@ -91,7 +85,6 @@ export default function WishlistScreen() {
                     </div>
                 </div>
 
-                {/* Continue Shopping */}
                 <div className="mt-6">
                     <Link
                         href={"/"}

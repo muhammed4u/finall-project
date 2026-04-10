@@ -56,7 +56,7 @@ if (!products || products.length === 0) {
         <>
             <div className="bg-gray-50 min-h-screen py-8">
                 <div className="container mx-auto px-4">
-                    {/* header */}
+                    
                     <div className="mb-8">
                         <nav className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                             <Link href={"/"}
@@ -87,9 +87,9 @@ if (!products || products.length === 0) {
                         </div>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        {/* cart items */}
+                        
                         <div className="lg:col-span-2">
-                            {/* cart items list */}
+                            
                             <div className="space-y-4">
                                 {products.map((product)=> <CartItem key={product._id} info={product}/>)}
                             </div>
@@ -107,7 +107,7 @@ if (!products || products.length === 0) {
                                 </button>
                             </div>
                         </div>
-                        {/* Order summary */}
+                        
                         <div className="lg:col-span-1">
                             <CartSummary totalCartPrice={totalCartPrice} numberOfCartItems={numOfCartItems}/>
                         </div>

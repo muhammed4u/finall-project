@@ -20,7 +20,6 @@ interface ReviewModalProps {
         const [review, setReview] = useState("");
         const [loading, setLoading] = useState(false);
 
-
     if (!isOpen) return null;
 
     const ratingLabels: Record<Exclude<RatingValue, 0>, string> = {
@@ -61,7 +60,6 @@ interface ReviewModalProps {
 
         <div className="bg-white w-full max-w-lg rounded-3xl shadow-2xl p-8 relative animate-[fadeIn_.3s_ease]">
 
-            {/* Close */}
             <button
             onClick={onClose}
             className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
@@ -73,7 +71,6 @@ interface ReviewModalProps {
             Write a Review
             </h3>
 
-            {/* Rating */}
             <div>
             <p className="text-sm font-medium text-gray-700 mb-3">
                 Your Rating
@@ -105,7 +102,6 @@ interface ReviewModalProps {
             </div>
             </div>
 
-            {/* Review */}
             <div className="mt-6">
             <p className="text-sm font-medium text-gray-700 mb-3">
                 Your Review
@@ -124,7 +120,6 @@ interface ReviewModalProps {
             </div>
             </div>
 
-            {/* Buttons */}
             <div className="flex justify-end gap-4 mt-8">
             <button
                 onClick={onClose}

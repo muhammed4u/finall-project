@@ -35,7 +35,6 @@ export default function LoginForm() {
         try {
             const response = await loginAction(values)
             console.log(response);
-            
 
             if(response.success){
                 await setToken(response.data.token , values.rememberMe)
@@ -197,5 +196,4 @@ export default function LoginForm() {
         </>
     )
 }
-
 

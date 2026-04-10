@@ -11,7 +11,6 @@ import { changePassword } from "../types/ChangePassword.type";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
-
 export default function ChangePassword() {
     const router = useRouter();
     const [showCurrent, setShowCurrent] = useState(false);
@@ -32,7 +31,7 @@ export default function ChangePassword() {
         setIsSubmitting(true);
         try {
             const response = await ChangePasswordData({ values });
-            // console.log(response);
+            
             if(response.message === "success"){
                 toast.success("Password changed successfully");
                 router.push('/login');
@@ -46,12 +45,11 @@ export default function ChangePassword() {
 
     return (
         <section className="relative rounded-3xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 shadow-2xl p-10 overflow-hidden">
-        
-        {/*  Background  */}
+
         <div className="absolute -top-24 -right-24 w-72 h-72 bg-emerald-200/30 blur-3xl rounded-full pointer-events-none"></div>
 
         <div className="relative">
-            {/* Header */}
+            
             <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center">
                 <FontAwesomeIcon icon={faLock} className="text-green-600" />
@@ -66,10 +64,8 @@ export default function ChangePassword() {
             </div>
             </div>
 
-            {/* Form */}
             <form className="grid gap-8" onSubmit={handleSubmit(onsubmit)}>
 
-            {/* Current Password */}
             <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                 Current Password
@@ -94,7 +90,6 @@ export default function ChangePassword() {
                 )}
             </div>
 
-            {/* New Password */}
             <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                 New Password
@@ -119,7 +114,6 @@ export default function ChangePassword() {
                 )}
             </div>
 
-            {/* Confirm Password */}
             <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                 Confirm New Password
@@ -144,7 +138,6 @@ export default function ChangePassword() {
                 )}
             </div>
 
-            {/* Save Button */}
             <div>
                 <button
                 type="submit"

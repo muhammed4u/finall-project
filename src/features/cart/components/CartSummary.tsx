@@ -7,12 +7,11 @@ export default function CartSummary({totalCartPrice, numberOfCartItems}: {totalC
     const subTotal = totalCartPrice;
     const shipping = subTotal >500? 0 : 100;
     const total = Math.round(subTotal + shipping)
-    
 
     return (
         <>
             <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden sticky top-24">
-                {/* Header */}
+                
                 <div className="bg-linear-to-r from-green-500 to-green-600 px-6 py-4" >
                     <h2 className="text-lg font-bold text-white flex items-center gap-2">
                         <FontAwesomeIcon icon={faShoppingBag}/>
@@ -23,7 +22,7 @@ export default function CartSummary({totalCartPrice, numberOfCartItems}: {totalC
                     </p>
                 </div>
                 <div className="p-6 space-y-5">
-                    {/* Free shopping */}
+                    
                     {
                         shipping>0 && (
                             <div className="bg-linear-to-r from-orange-50 to-amber-50 rounded-xlp-4">
@@ -55,7 +54,6 @@ export default function CartSummary({totalCartPrice, numberOfCartItems}: {totalC
                     )
                     }
 
-                    {/* Price */}
                     <div className="space-y-3">
                         <div className="flex justify-between text-gray-600">
                             <span>Subtotal</span>
@@ -69,7 +67,7 @@ export default function CartSummary({totalCartPrice, numberOfCartItems}: {totalC
                                 <span className="font-medium text-gray-900">100</span> 
                             )}
                         </div>
-                        {/* Divider */}
+                        
                         <div className="border-t border-dashed border-gray-200 pt-3 mt-3">
                             <div className="flex justify-between items-baseline">
                                 <span className="text-gray-900 font-semibold">Total</span>
@@ -82,20 +80,20 @@ export default function CartSummary({totalCartPrice, numberOfCartItems}: {totalC
                             </div>
                         </div>
                     </div>
-                    {/* Promo Code Hint */}
+                    
                     <button
                     className="w-full flex items-center justify-center gap-2 py-3 border border-dashed border-gray-300 rounded-xl text-gray-600 hover:border-green-400 hover:text-green-500 hover:bg-green-50/50 transition-all duration-150">
                         <FontAwesomeIcon icon={faTag}/>
                         <span className="text-sm font-medium">Apply Promo Code</span>
                     </button>
-                    {/* Checkout */}
+                    
                     <Link
                     href={'/checkout'}
                     className="bg-linear-to-r from-green-600 to-green-700 py-4 px-6 text-white rounded-xl font-semibold hover:from-green-600  hover:to-green-700 transition-all duration-150 flex items-center justify-center gap-3 shadow-lg shadow-green-600/20 active:scale-[0.98]">
                         <FontAwesomeIcon icon={faLock}/>
                         <span>Secure Checkout</span>
                     </Link>
-                    {/* Trust Badges */}
+                    
                     <div className="py-2 flex items-center justify-center gap-4">
                         <div className="flex items-center gap-1.5 text-xs text-gray-500">
                             <FontAwesomeIcon icon={faShieldAlt} className="text-green-500"/>
@@ -107,7 +105,7 @@ export default function CartSummary({totalCartPrice, numberOfCartItems}: {totalC
                             <span>Fast Delivery</span>
                         </div>
                     </div>
-                    {/* Continue shopping */}
+                    
                     <Link
                     href={'/'}
                     className="block py-2 text-center text-green-500 hover:text-green-600 text-sm font-medium">

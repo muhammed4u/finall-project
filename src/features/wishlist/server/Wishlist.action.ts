@@ -41,7 +41,7 @@ export async function getLoggedUserWishlist():Promise<ProductsResponse>{
         headers: {token},
     }
     const {data} = await axios.request(options)
-    // console.log(data);
+    
     return data
     
     } catch (error) {
@@ -70,5 +70,4 @@ export async function removeProductFromWishlist({productId} : {productId: string
         throw error
     }
 }
-
 

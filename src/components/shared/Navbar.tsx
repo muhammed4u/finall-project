@@ -36,6 +36,7 @@ import useLogout from "@/features/auth/hooks/UseLogOut";
     export default function Navbar() {
     const accountRef = useRef<HTMLLIElement>(null);
     const [isAccountOpen, setIsAccountOpen] = useState(false);
+    // open and close profile menu
     function toggleAccount() {
     setIsAccountOpen(!isAccountOpen);
     }
@@ -44,8 +45,8 @@ import useLogout from "@/features/auth/hooks/UseLogOut";
     const {isAuthenticated , userInfo} =useSelector((appState:AppState)=>appState.auth)
     const pathName = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
 
+    // open mobile menu
     function toggleMenu(){
         setIsMenuOpen(!isMenuOpen)
     }
@@ -94,12 +95,10 @@ useEffect(() => {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, [isAccountOpen]);
 
-
     return (
         <>
         <div className="container">
-            
-            {/* Main Navbar */}
+
             <nav
                 className={`w-full flex justify-between items-center px-8 py-4  ${
                     isNavFixed
@@ -245,7 +244,6 @@ useEffect(() => {
             </nav>
         </div>
 
-        {/* Categories nav */}
         <nav className="bg-gray-50 py-4 hidden lg:flex items-center z-50 relative">
             <div className="container flex items-center justify-between ">
             <div className="flex gap-8 items-center ">
@@ -364,22 +362,20 @@ useEffect(() => {
             </div>
         </nav>
 
-        {/* OffCanvas */}
         {isMenuOpen && (
     <>
-        {/* Overlay */}
+        
         <div
         className="fixed inset-0 bg-black/50 z-40"
         onClick={toggleMenu}
         ></div>
 
-        {/* Sidebar */}
         <div
         className={`fixed top-0 left-0 h-full w-72 bg-white z-50 p-5
         transform transition-transform duration-300 ease-in-out
         ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
         >
-        {/* Header */}
+        
         <div className="flex justify-between items-center border-b pb-4">
             <Image src={freshCartLogo} alt="Fresh cart logo" className="w-32" />
             <button
@@ -390,7 +386,6 @@ useEffect(() => {
             </button>
         </div>
 
-        {/* Search */}
         <div className="relative my-5">
             <input
             type="text"
@@ -410,11 +405,10 @@ useEffect(() => {
             />
         </div>
 
-        {/* Main Menu */}
         <div>
             <h2 className="text-lg font-semibold mb-3">Main Menu</h2>
             <ul className="space-y-2">
-            {/* Wishlist */}
+            
             <li>
                 <Link
                 href="/wishlist"
@@ -435,7 +429,6 @@ useEffect(() => {
                 </Link>
             </li>
 
-            {/* Cart */}
             <li>
                 <Link
                 href="/cart"
@@ -456,7 +449,6 @@ useEffect(() => {
                 </Link>
             </li>
 
-            {/* Profile */}
             <li>
                 <Link
                 href="/profile"
@@ -478,7 +470,6 @@ useEffect(() => {
             </ul>
         </div>
 
-        {/* Account Section */}
         <div className="border-t mt-6 pt-6">
             <h2 className="text-lg font-semibold mb-3">Account</h2>
             <ul className="space-y-2">

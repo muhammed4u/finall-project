@@ -1,4 +1,4 @@
-// components/ShopLoading.tsx
+
 export default function ShopLoading() {
     return (
         <div className="flex flex-col items-center justify-center py-40 text-green-600 space-y-4">

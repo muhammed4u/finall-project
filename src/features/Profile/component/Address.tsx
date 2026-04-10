@@ -39,7 +39,6 @@ export default function Address() {
         fetchAddresses();
     }, []);
 
-
     const handleSaveAddress = async () => {
     await fetchAddresses();
     setIsOpen(false);
@@ -73,7 +72,7 @@ export default function Address() {
                 <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-green-200/30 rounded-full blur-3xl"></div>
 
                 <div className="relative text-center">
-                {/* Icon Badge */}
+                
                 <div className="relative w-28 h-28 mx-auto mb-8">
                     <div className="absolute inset-0 bg-gradient-to-tr from-green-500 to-emerald-400 rounded-full blur-xl opacity-30"></div>
                     <div className="relative w-full h-full bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100">
@@ -84,18 +83,15 @@ export default function Address() {
                     </div>
                 </div>
 
-                {/* Title */}
                 <h2 className="text-3xl font-bold text-gray-800 mb-4 tracking-tight">
                     No Saved Addresses
                 </h2>
 
-                {/* Description */}
                 <p className="text-gray-500 max-w-lg mx-auto mb-10 leading-relaxed">
                     Add your first delivery address to enjoy faster checkout and a
                     more seamless shopping experience across your account.
                 </p>
 
-                {/* Button */}
                 <button
                     className="group relative inline-flex items-center gap-3 px-10 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-green-600 to-emerald-500 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                     onClick={() => setIsOpen(true)}

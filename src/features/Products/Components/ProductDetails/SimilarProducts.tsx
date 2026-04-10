@@ -35,7 +35,7 @@ interface Props {
 
     return (
         <div className="relative group">
-        {/* Custom Navigation Buttons */}
+        
         <button
     ref={prevRef}
     aria-label="Previous Slide"

@@ -13,7 +13,6 @@ import { removeWishlistItem, setWishlistInfo } from "@/features/wishlist/store/W
 import { useAddToCart } from "@/features/cart/hooks/useAddToCart";
 import { AppState } from "@/store/store";
 
-
 export default function ProductCard({info}: {info:Product}) {
 
     const dispatch = useDispatch()

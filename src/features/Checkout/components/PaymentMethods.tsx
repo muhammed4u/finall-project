@@ -1,7 +1,6 @@
 import { faCheck, faCreditCard, faMoneyBill, faShieldAlt, faWallet } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
 interface paymentMethodsProps {
     selectedMethod: 'cash' | 'card',
     changeMethod: (method: 'cash' | 'card')=> void
@@ -22,7 +21,7 @@ export default function PaymentMethods({selectedMethod, changeMethod}: paymentMe
                 </div>
 
                 <div className="p-6 space-y-4">
-                    {/* Cash On Delivery */}
+                    
                     <button
                     type="button"
                     onClick={()=> changeMethod('cash')}
@@ -53,7 +52,6 @@ export default function PaymentMethods({selectedMethod, changeMethod}: paymentMe
                         </div>
                     </button>
 
-                    {/* Online Payment */}
                     <button
                     type="button"
                     onClick={()=> changeMethod('card')}
@@ -88,7 +86,7 @@ export default function PaymentMethods({selectedMethod, changeMethod}: paymentMe
                             {selectedMethod === "card" && (<FontAwesomeIcon icon={faCheck} className="text-xs"/>)}
                         </div>
                     </button>
-                    {/* Security Notice */}
+                    
                     <div className="flex p-4 items-center gap-3 bg-linear-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100 mt-4">
                         <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center shrink-0">
                             <FontAwesomeIcon icon={faShieldAlt} className="text-green-600"/>

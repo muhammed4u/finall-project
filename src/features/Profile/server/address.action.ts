@@ -90,26 +90,3 @@ export async function getAddressDetails({id}: {id: string}):Promise<getAddressDe
     }
 }
 
-
-
-//___________ Add Address Response _____________
-// {
-//     "status": "success",
-//     "message": "Address added successfully",
-//     "data": [
-//         {
-//             "_id": "699b99181db495796d01f498",
-//             "name": "",
-//             "details": "",
-//             "phone": "",
-//             "city": ""
-//         },
-//         {
-//             "_id": "699b99241db495796d01f4ac",
-//             "name": "",
-//             "details": "",
-//             "phone": "",
-//             "city": ""
-//         },
-//     ]
-// }

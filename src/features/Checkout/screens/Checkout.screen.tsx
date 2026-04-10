@@ -53,7 +53,6 @@ export default function CheckoutScreen() {
         fetchAddresses();
     }, []);
 
-
     const {register , handleSubmit, reset , formState: {errors}} = useForm({
         defaultValues: {
             details: '',
@@ -146,14 +145,13 @@ export default function CheckoutScreen() {
         return <CheckoutScreenSkeleton />
     }
 
-
     return (
         <>
             <div className="bg-linear-to-b from-gray-50 to-white min-h-screen py-8">
                 <div className="container mx-auto px-4">
-                    {/* Checkout Progress */}
+                    
                     <div className="mb-8">
-                        {/* BreadCrumb */}
+                        
                         <nav className="text-sm flex items-center gap-2 mb-6 text-gray-500">
                             <Link
                             href={"/"}
@@ -169,7 +167,7 @@ export default function CheckoutScreen() {
                             <span className="text-gray-300">/</span>
                             <span className="text-gray-900 font-medium">Checkout</span>
                         </nav>
-                        {/* Page Header */}
+                        
                         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                             <div>
                                 <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-3">
@@ -195,7 +193,7 @@ export default function CheckoutScreen() {
                             }
                     }>
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                            {/* Left Column Form */}
+                            
                             <div className="lg:col-span-2 space-y-6">
                             {loadingAddresses ? (
                             <p>Loading addresses...</p>
@@ -232,27 +230,26 @@ export default function CheckoutScreen() {
                             )}
                             <PaymentMethods selectedMethod={paymentMethod} changeMethod={setPaymentMethod} />
                             </div>
-                            {/* Right Column Order Summary */}
+                            
                             <div className="lg:col-span-1">
                                 <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm sticky top-4">
-                                    {/* Header */}
+                                    
                                     <div className="bg-linear-to-r from-green-500 to-green-600 px-6 py-4">
                                         <h2 className="text-lg font-bold text-white flex items-center gap-2">
                                             <FontAwesomeIcon icon={faShoppingBag}/>
                                             Order Summary
                                         </h2>
                                         <p className="text-green-100 text-sm mt-1">
-                                            {/*  */}
+                                            
                                         </p>
                                     </div>
                                     <div className="p-5">
-                                        {/* Cart items review */}
+                                        
                                         <div className="space-y-3 max-h-56 overflow-y-auto mb-5 pr-1">
-                                            {/*  */}
+                                            
                                         </div>
                                         <hr className="border-gray-100 my-4"/>
 
-                                        {/* Price */}
                                         <div className="space-y-3">
                                             <div className="flex justify-between text-gray-600">
                                                 <span>Subtotal</span>
@@ -284,7 +281,7 @@ export default function CheckoutScreen() {
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* Submit button */}
+                                        
                                         <button
                                             type="submit"
                                             disabled={(!useNewAddress && !selectedAddress) || false}
@@ -293,7 +290,7 @@ export default function CheckoutScreen() {
                                             <FontAwesomeIcon icon={faShieldAlt}/>
                                             Proceed to Payment
                                         </button>
-                                        {/* Trust Badges */}
+                                        
                                         <div className="flex items-center justify-center gap-4 mt-4 py-3 border-t border-gray-100">
                                             <div className="flex items-center gap-1.5 text-xs text-gray-500">
                                                 <FontAwesomeIcon icon={faShieldAlt} className="text-green-500"/>

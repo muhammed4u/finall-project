@@ -32,7 +32,6 @@ export default function OrdersScreen() {
 
     if (!userInfo) return null;
 
-    // Loading skeleton
     if (loading) {
         return (
             <div className="container mx-auto px-4 py-8">
@@ -47,7 +46,6 @@ export default function OrdersScreen() {
         );
     }
 
-    // No orders
     if (!orders || orders.length === 0) {
         return (
             <div className="min-h-[60vh] px-4 flex items-center justify-center">
@@ -71,7 +69,6 @@ export default function OrdersScreen() {
         );
     }
 
-    // Orders list
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="mb-8">
@@ -83,7 +80,6 @@ export default function OrdersScreen() {
                     <span className="text-gray-900 font-medium"> My Orders</span>
                 </nav>
 
-                {/* Title */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
                         <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg shadow-green-500/25">
@@ -105,7 +101,7 @@ export default function OrdersScreen() {
                     </Link>
                 </div>
             </div>
-            {/* Orders */}
+            
             <div className="space-y-4">
                 {orders.map((order) => (
                     <OrderCard key={order._id} orderInfo={order} />

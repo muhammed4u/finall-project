@@ -15,7 +15,6 @@ export default function WishlistLoadingScreen() {
         <div className="min-h-screen py-8">
             <div className="container mx-auto px-4">
 
-                {/* Header */}
                 <div className="mb-8">
                     <nav className="flex items-center gap-2 text-sm text-gray-400 mb-4 select-none">
                         <Skeleton className="w-14 h-4 rounded" />
@@ -34,24 +33,21 @@ export default function WishlistLoadingScreen() {
                     </div>
                 </div>
 
-                {/* Wishlist Items Container */}
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
 
-                    {/* Table Header */}
                     <div className="hidden md:grid grid-cols-4 bg-gray-50 px-6 py-4 text-sm font-medium text-gray-400 select-none">
                         <span>Product</span>
                         <span>Price</span>
                         <span className="text-right">Actions</span>
                     </div>
 
-                    {/* Skeleton Wishlist Items */}
                     <div className="divide-y divide-gray-100">
                         {[...Array(2)].map((_, index) => (
                             <div
                                 key={index}
                                 className="grid grid-cols-1 md:grid-cols-4 items-center gap-6 px-6 py-6"
                             >
-                                {/* Product */}
+                                
                                 <div className="md:col-span-2 flex items-center gap-5">
                                     <Skeleton className="w-28 h-28 rounded-xl" />
                                     <div className="flex flex-col gap-2 w-full max-w-[400px]">
@@ -60,13 +56,11 @@ export default function WishlistLoadingScreen() {
                                     </div>
                                 </div>
 
-                                {/* Price */}
                                 <div>
                                     <Skeleton className="w-20 h-6 rounded" />
                                     <Skeleton className="w-16 h-4 rounded mt-1" />
                                 </div>
 
-                                {/* Actions */}
                                 <div className="flex justify-end gap-3">
                                     <Skeleton className="w-24 h-10 rounded-xl" />
                                     <Skeleton className="w-10 h-10 rounded-xl" />
@@ -76,7 +70,6 @@ export default function WishlistLoadingScreen() {
                     </div>
                 </div>
 
-                {/* Continue Shopping */}
                 <div className="mt-6 select-none">
                     <Link
                         href={"/"}

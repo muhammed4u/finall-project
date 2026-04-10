@@ -23,7 +23,7 @@ export default function HelpCenter() {
             animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
         >
-            {/* Header */}
+            
             <header className="mb-10 flex flex-col md:flex-row items-center md:justify-between gap-6">
             <div className="flex items-center gap-4">
                 <div className="bg-green-600 p-4 rounded-full text-white shadow-lg animate-pulse">
@@ -40,9 +40,8 @@ export default function HelpCenter() {
             </div>
             </header>
 
-            {/* FAQ Grid */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* FAQ Item */}
+            
             <div
                 className={`${sectionClass} ${animate ? sectionClassActive : ""}`}
             >
@@ -112,7 +111,6 @@ export default function HelpCenter() {
             </div>
             </section>
 
-            {/* Contact Options */}
             <section className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="bg-green-50 p-6 rounded-xl shadow hover:shadow-lg transition-shadow duration-500">
                 <FontAwesomeIcon icon={faEnvelope} className="text-green-600 text-3xl mb-4" />

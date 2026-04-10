@@ -34,8 +34,7 @@ export default async function signupAction(values:SignUpFormValues){
         }
         const {data} = await axios.request(options);
         if(data.message === 'success'){
-            // console.log(data);
-            
+
             return {
                 success: true,
                 message: 'Account created successfully',
@@ -66,5 +65,4 @@ export default async function signupAction(values:SignUpFormValues){
         }
     }
 }
-
 

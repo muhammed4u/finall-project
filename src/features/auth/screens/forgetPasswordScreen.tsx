@@ -1,7 +1,6 @@
 import ForgetPasswordForm from '../components/forgetPassword/forgetPasswordForm';
 import ForgetPasswordHero from "../components/forgetPassword/forgetPasswordHero";
 
-
 export default function ForgetPasswordScreen() {
     return (
         <main className="py-6">

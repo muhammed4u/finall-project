@@ -3,7 +3,6 @@ import { useSearchParams } from "next/navigation";
 import ForgetPasswordHero from "../components/forgetPassword/forgetPasswordHero";
 import VerifyCodeForm from "../components/forgetPassword/verifyPassword";
 
-
 export default function VerifyScreen() {
     const searchParams = useSearchParams();
     const email = searchParams.get("email") || "";

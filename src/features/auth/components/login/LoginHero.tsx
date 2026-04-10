@@ -28,7 +28,6 @@ import {
             <div className="relative w-40 h-40 mx-auto">
                 <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-emerald-400 via-green-300 to-emerald-500 blur-2xl opacity-40 animate-pulseSlow" />
 
-
                 <div className="relative w-full h-full bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl flex items-center justify-center p-4">
                 <img
                     src="https://storage.googleapis.com/uxpilot-auth.appspot.com/2e5810ff3e-e750761ebcd4ae5907db.png"
@@ -38,7 +37,6 @@ import {
                 </div>
             </div>
             </div>
-
 
             <div
             className={`transition-all duration-700 delay-200 ${
@@ -50,14 +48,12 @@ import {
             </h2>
             </div>
 
-
             <p
             className={`mt-6 text-green-100 text-lg leading-relaxed transition-opacity duration-1000 delay-400 ${animate ? "opacity-100" : "opacity-0"}`}
             >
             Log in to continue shopping fresh groceries with fast delivery and
             secure checkout.
             </p>
-
 
             <div className="mt-12 grid grid-cols-3 gap-6 text-sm text-center">
             <div className="space-y-2">
@@ -85,10 +81,8 @@ import {
             </div>
             </div>
 
-
             <div className="mt-12 h-px w-32 mx-auto bg-linear-to-r from-transparent via-white to-transparent opacity-40" />
         </div>
-
 
         </section>
     );

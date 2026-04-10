@@ -19,7 +19,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"], 
 });
 
-
 import {Exo} from "next/font/google";
 import Providers from "@/components/Providers/Providers";
 import { auth } from "@/auth";
@@ -34,14 +33,13 @@ const exo = Exo({
   weight: ["400","500", "600", "700", "800", "900"],
 });
 
-
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
 
-
+  // cart state to hold items
   let cartState:CartState = {
     cartId: null,
     numOfCartItems: 0,
@@ -62,7 +60,8 @@ export default async function RootLayout({
       role: 'user'
     };
   }
-
+  
+  // check if user is logged in
   if(authValues.isAuthenticated){
     try {
       const cartResponse = await getLoggedUserCart()

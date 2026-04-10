@@ -1,4 +1,4 @@
-"use client"; // Must be first line
+"use client"; 
 
 import Link from "next/link";
 import Image from "next/image";
@@ -41,12 +41,10 @@ export default function CategoryDetailsScreen({ id }: Props) {
 
     return (
         <div className="min-h-screen bg-gray-100">
-        
-        {/* ================= HEADER ================= */}
+
         <div className="py-5 bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 text-white shadow-md">
             <div className="max-w-7xl mx-auto px-6 py-10">
 
-            {/* Breadcrumb */}
             <div className="flex items-center text-sm text-emerald-100 mb-6">
                 <Link href="/" className="hover:text-white hover:underline transition">Home</Link>
                 <span className="mx-3 text-emerald-200">/</span>
@@ -57,9 +55,8 @@ export default function CategoryDetailsScreen({ id }: Props) {
                 </span>
             </div>
 
-            {/* Title Section */}
             <div className="flex items-center gap-5">
-                {/* Avatar */}
+                
                 <div className="w-20 h-20 rounded-2xl overflow-hidden bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg">
                 {loading ? (
                     <div className="w-20 h-20 bg-gray-300 animate-pulse rounded-2xl" />
@@ -74,7 +71,6 @@ export default function CategoryDetailsScreen({ id }: Props) {
                 )}
                 </div>
 
-                {/* Title + Subtitle */}
                 <div>
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
                     {loading ? "Loading..." : category?.name}
@@ -88,9 +84,8 @@ export default function CategoryDetailsScreen({ id }: Props) {
             </div>
         </div>
 
-        {/* ================= CONTENT ================= */}
         <div className="max-w-7xl mx-auto px-6 py-10">
-            {/* Back Button */}
+            
             <Link
             href="/categories"
             className="inline-flex items-center text-gray-600 hover:text-emerald-600 font-medium mb-8 transition"
@@ -99,7 +94,6 @@ export default function CategoryDetailsScreen({ id }: Props) {
             Back to Categories
             </Link>
 
-            {/* Subcategories Header */}
             <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-semibold text-gray-800">
                 Subcategories
@@ -109,7 +103,6 @@ export default function CategoryDetailsScreen({ id }: Props) {
             </span>
             </div>
 
-            {/* Cards Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {loading
                 ? Array.from({ length: 4 }).map((_, index) => (

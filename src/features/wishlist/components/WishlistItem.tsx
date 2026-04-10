@@ -64,7 +64,7 @@ export default function WishlistItem({itemInfo}:{itemInfo:Product}) {
             if (result.isConfirmed) {
                 try {
                     const response = await removeProductFromWishlist({ productId: id })
-                    // console.log(response)
+                    
                     dispatch(removeWishlistItem({id}))
                     toast.success('Item removed successfully')
                     const cart = JSON.parse(localStorage.getItem("myCart") || "[]");
@@ -80,10 +80,8 @@ export default function WishlistItem({itemInfo}:{itemInfo:Product}) {
     return (
         <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-6 px-6 py-6 border-b border-gray-100 hover:bg-gray-50 transition">
 
-            {/* PRODUCT SECTION */}
             <div className="md:col-span-2 flex items-center gap-5">
 
-                {/* Image */}
                 <div className="relative w-28 h-28 bg-gray-100 rounded-xl border border-gray-100 flex items-center justify-center overflow-hidden">
                     <img
                         src={imageCover}
@@ -99,7 +97,6 @@ export default function WishlistItem({itemInfo}:{itemInfo:Product}) {
                     )}
                 </div>
 
-                {/* Info */}
                 <div>
                     <Link href={`/products/${id}`}>
                         <h3 className="text-base font-semibold text-gray-900 hover:text-green-600 transition leading-snug">
@@ -113,7 +110,6 @@ export default function WishlistItem({itemInfo}:{itemInfo:Product}) {
                 </div>
             </div>
 
-            {/* PRICE SECTION */}
             <div>
 
                 <div className="flex flex-col">
@@ -127,7 +123,6 @@ export default function WishlistItem({itemInfo}:{itemInfo:Product}) {
                 </div>
             </div>
 
-            {/* ACTIONS SECTION */}
             <div className="flex flex-col md:items-end">
 
                 <div className="flex items-center gap-3">

@@ -6,7 +6,6 @@ import { getProducts } from "@/features/Products/Server/Products.action";
 import { Product } from "@/features/Products/Types/Products.types";
 import { useEffect, useState } from "react";
 
-
 export default function AllProductsPage() {
     const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
@@ -28,7 +27,7 @@ export default function AllProductsPage() {
 
     return (
         <div className="min-h-screen bg-gray-50">
-        {/* Header */}
+        
         <header className="bg-linear-to-r from-green-600 to-green-500 text-white p-8 shadow-lg">
             <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <nav aria-label="Breadcrumb" className="text-sm opacity-90">
@@ -55,7 +54,6 @@ export default function AllProductsPage() {
             </p>
         </header>
 
-        {/* Product Grid */}
         <main className="max-w-7xl mx-auto px-6 py-12">
             {loading ? (
             <ShopLoading />

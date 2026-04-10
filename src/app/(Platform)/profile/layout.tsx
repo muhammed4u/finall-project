@@ -18,7 +18,7 @@ import {
 
     return (
         <div className="min-h-screen bg-gray-50">
-        {/* HEADER SECTION - Same original design but adjusted padding */}
+        
         <div className="relative bg-linear-to-r from-green-500 to-emerald-500 text-white">
             <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
 
@@ -46,11 +46,9 @@ import {
             </div>
         </div>
 
-        {/* MAIN CONTENT AREA - Spacing instead of extreme negative margin */}
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-8">
             <div className="flex flex-col lg:flex-row gap-8">
-            
-            {/* SIDEBAR - Fixed width on desktop, full width on mobile */}
+
             <aside className="w-full lg:w-72">
                 <div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-5">
                 <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4 px-2">
@@ -91,7 +89,6 @@ import {
                 </div>
             </aside>
 
-            {/* CONTENT PANEL */}
             <main className="flex-1 bg-white rounded-3xl shadow-sm border border-gray-200 p-6 md:p-10">
                 {children}
             </main>

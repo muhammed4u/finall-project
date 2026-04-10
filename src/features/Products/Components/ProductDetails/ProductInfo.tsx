@@ -80,7 +80,7 @@ export default function ProductInfo({product}:{product:Product}) {
         <section id="product-detail" className="py-6">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:flex-row gap-8">
-                    {/* Images */}
+                    
                     <div id="product-images" className="lg:w-1/4">
                         <div className="bg-white rounded-xl shadow-sm p-4 sticky top-4">
                             <ImageGallery items={images.map((image)=>{
@@ -94,10 +94,9 @@ export default function ProductInfo({product}:{product:Product}) {
                         </div>
                     </div>
 
-                    {/* product info */}
                     <div id="product-info" className="lg:w-3/4">
                         <div className="bg-white rounded-xl shadow-sm p-6">
-                            {/* category and brand badges */}
+                            
                             <div className="flex flex-wrap gap-2 mb-4">
                                 <Link href={""}
                                 className="bg-green-50 text-green-600 text-xs px-3 py-1.5 rounded-full hover:bg-gray-100 transition-colors duration-200">
@@ -107,18 +106,18 @@ export default function ProductInfo({product}:{product:Product}) {
                                     {brand.name}
                                 </span>
                             </div>
-                            {/* title */}
+                            
                             <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
                                 {title}
                             </h1>
-                            {/* Rating */}
+                            
                             <div className="flex items-center gap-3 mb-4">
                                 <Ratings rating={ratingsAverage}/>
                                 <span className="text-sm text-gray-600">
                                     {ratingsAverage} ( {ratingsQuantity} reviews )
                                 </span>
                             </div>
-                            {/* price */}
+                            
                             <div className="flex flex-wrap items-center gap-3 mb-6">
                                 <span className="text-3xl font-bold text-gray-900">
                                         {priceAfterDiscount || price} EGP
@@ -136,7 +135,7 @@ export default function ProductInfo({product}:{product:Product}) {
                                     )
                                 }
                             </div>
-                            {/* Stock */}
+                            
                             <div className="flex items-center gap-2 mb-6">
                                 {quantity > 0 ? (
                                     <span
@@ -154,13 +153,13 @@ export default function ProductInfo({product}:{product:Product}) {
                                 )}
                             </div>
                         </div>
-                        {/* Description */}
+                        
                         <div className="border-t border-gray-100 pt-5 mb-6">
                             <p className="text-gray-600 leading-relaxed">
                                 {description}
                             </p>
                         </div>
-                        {/* Quanity Selector */}
+                        
                         <div className="mb-6">
                             <label className="block text-sm font-medium text-gray-700 mb-2">
                                 Quantity
@@ -189,7 +188,7 @@ export default function ProductInfo({product}:{product:Product}) {
                                 <span className="text-sm text-gray-500">{quantity} available</span>
                             </div>
                         </div>
-                        {/* Total Price */}
+                        
                         <div className="bg-gray-50 rounded-lg p-4 mb-6 ">
                             <div className="flex justify-between items-center">
                                 <span className="text-gray-600">Total Price:</span>
@@ -198,7 +197,7 @@ export default function ProductInfo({product}:{product:Product}) {
                                 </span>
                             </div>
                         </div>
-                        {/* Action Buttons */}
+                        
                         <div className="flex flex-col sm:flex-row gap-3 mb-6">
                             <button
                             id="add-to-cart"
@@ -225,7 +224,7 @@ export default function ProductInfo({product}:{product:Product}) {
                             </Link>
                             
                         </div>
-                        {/* Wishlist */}
+                        
                         <div className="flex gap-3 mb-6">
                             <button
                                 id="wishlist-button"
@@ -240,7 +239,7 @@ export default function ProductInfo({product}:{product:Product}) {
                                 <FontAwesomeIcon icon={faHeart} />
                             </button>
                         </div>
-                        {/* trust badges */}
+                        
                         <div className="border-t border-gray-100 pt-6">
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                 <div className="flex items-center gap-3">

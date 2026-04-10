@@ -18,7 +18,6 @@ export interface CreateReviewResponse {
     data: Review;
 }
 
-
 export interface ReviewUser {
     _id: string;
     name: string;
@@ -35,7 +34,6 @@ export interface GetReviewsResponse {
     metadata: PaginationMetadata;
     data: Review[];
 }
-
 
 export interface ReviewUser {
     _id: string;

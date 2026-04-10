@@ -6,8 +6,6 @@ import { addProductToCart, getLoggedUserCart } from "../server/cart.action";
 import { toast } from "react-toastify";
 import { setCartInfo } from "../store/Cart.slice";
 
-
-
 export function useAddToCart() {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(false);
@@ -26,7 +24,7 @@ export function useAddToCart() {
             const cartInfo = await getLoggedUserCart();
             dispatch(setCartInfo(cartInfo));
 
-            return true; // success flag
+            return true; 
         }
         } catch (error) {
         toast.error("Failed to add product to cart, please login first");

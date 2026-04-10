@@ -12,10 +12,8 @@ import {
     return (
         <div className="w-full bg-white rounded-3xl border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.05)] p-6 sm:p-10">
 
-        {/* ================= TOP SECTION ================= */}
         <div className="grid md:grid-cols-2 gap-6">
 
-            {/* ================= SHIPPING CARD ================= */}
             <div className="bg-emerald-50 rounded-2xl p-6 sm:p-8">
 
             <div className="flex items-center gap-4 mb-6">
@@ -47,7 +45,6 @@ import {
             </ul>
             </div>
 
-            {/* ================= RETURNS CARD ================= */}
             <div className="bg-emerald-50 rounded-2xl p-6 sm:p-8">
 
             <div className="flex items-center gap-4 mb-6">
@@ -80,7 +77,6 @@ import {
             </div>
         </div>
 
-        {/* ================= BUYER PROTECTION ================= */}
         <div className="mt-10 bg-gray-50 rounded-2xl sm:p-5 border border-gray-100">
 
             <div className="flex flex-col sm:flex-row sm:items-start gap-4">

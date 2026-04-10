@@ -27,10 +27,10 @@ function Slider() {
             autoplay={{ delay: 4000 }}
             loop={true}
         >
-            {/* Slide 1 */}
+            
             <SwiperSlide>
             <div className="h-115 relative flex items-center justify-start overflow-hidden">
-                {/* Background */}
+                
                 <div
                 style={{
                     backgroundImage: `url(${sliderImg1.src})`,
@@ -40,7 +40,6 @@ function Slider() {
                 className="absolute inset-0 animate-bgZoom"
                 ></div>
 
-                {/* Overlay content on left */}
                 <div className="overlay relative w-full h-full bg-linear-to-r from-green-500/90 to-green-400/50 flex items-center">
                 <div className="flex flex-col justify-center items-start pl-12 gap-4 max-w-md">
                     <h2 className="text-white text-4xl font-bold animate-slideUp">
@@ -68,7 +67,6 @@ function Slider() {
             </div>
             </SwiperSlide>
 
-            {/* Slide 2 */}
             <SwiperSlide>
             <div className="h-115 relative flex items-center justify-start overflow-hidden">
                 <div
@@ -106,7 +104,6 @@ function Slider() {
             </div>
             </SwiperSlide>
 
-            {/* Slide 3 */}
             <SwiperSlide>
             <div className="h-115 relative flex items-center justify-start overflow-hidden">
                 <div
@@ -144,7 +141,6 @@ function Slider() {
             </div>
             </SwiperSlide>
 
-            {/* Slide 4 */}
             <SwiperSlide>
             <div className="h-115 relative flex items-center justify-start overflow-hidden">
                 <div
@@ -183,7 +179,6 @@ function Slider() {
             </SwiperSlide>
         </Swiper>
 
-        {/* Navigation buttons */}
         <button className="custom-prev absolute left-4 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/90 hover:bg-white size-12 rounded-full text-green-500 flex justify-center items-center transition-colors">
             <FontAwesomeIcon icon={faChevronLeft} className="text-xl" />
         </button>

@@ -28,17 +28,14 @@ export default function BrandsScreen() {
         fetchBrands()
     }, [])
 
-
     return (
         <div className="min-h-screen bg-[#f8f9fc]">
 
-        {/* HERO */}
         <div className="relative bg-linear-to-r from-purple-600 via-indigo-600 to-blue-500 py-24">
             <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px]" />
 
             <div className="relative max-w-7xl mx-auto px-6">
 
-            {/* Breadcrumb */}
             <Link href={'/'}>
                 <p className="text-white/80 text-sm mb-6 tracking-wide">
                 Home <span className="mx-2">/</span> 
@@ -50,7 +47,6 @@ export default function BrandsScreen() {
 
             <div className="flex items-center gap-6">
 
-                {/* Icon Box */}
                 <div className="w-20 h-20 flex items-center justify-center 
                                 rounded-3xl 
                                 bg-white/20 
@@ -62,7 +58,6 @@ export default function BrandsScreen() {
                 />
                 </div>
 
-                {/* Text */}
                 <div>
                 <h1 className="text-5xl font-bold text-white leading-tight">
                     Top Brands
@@ -76,7 +71,6 @@ export default function BrandsScreen() {
             </div>
         </div>
 
-        {/* FLOATING BRAND SECTION */}
         <div className="relative -mt-16 pb-24">
             <div className="max-w-7xl mx-auto px-6">
             <div className="bg-white rounded-4xl p-10 

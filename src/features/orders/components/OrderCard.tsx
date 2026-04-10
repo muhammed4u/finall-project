@@ -49,7 +49,7 @@ export default function OrderCard({orderInfo}: {orderInfo:Order}) {
     return (
         <>
             <div className="bg-white overflow-hidden rounded-2xl border border-gray-100 transition-all duration-300 shadow-sm hover:shadow-md hover:border-gray-200">
-                {/* Main Content */}
+                
                 <div className="p-5 sm:p-6">
                     <div className="flex gap-5">
                         <div className="relative shrink-0">
@@ -59,14 +59,14 @@ export default function OrderCard({orderInfo}: {orderInfo:Order}) {
                                     className="w-full h-full object-contain"/>
                                 )}
                             </div>
-                            {/* Multi-item indicator */}
+                            
                             {orderInfo.cartItems.length > 1 && (
                                 <div className="absolute -top-2 -right-2 w-7 h-7 bg-gray-900 text-white text-sm font-bold rounded-full flex items-center justify-center shadow-lg">
                                     +{orderInfo.cartItems.length -1}
                                 </div>
                             )}
                         </div>
-                        {/* Order Info */}
+                        
                         <div className="flex-1 min-w-0">
                             <div className="flex items-start justify-between gap-3 mb-3">
                                 <div>
@@ -79,7 +79,7 @@ export default function OrderCard({orderInfo}: {orderInfo:Order}) {
                                         {orderInfo.id}
                                     </h3>
                                 </div>
-                                {/* Payment Method */}
+                                
                                 <div 
                                 className={`shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${
                                     orderInfo.paymentMethodType === 'cash' ? "bg-purple-100" : "bg-gray-100"
@@ -87,7 +87,7 @@ export default function OrderCard({orderInfo}: {orderInfo:Order}) {
                                     <FontAwesomeIcon icon={orderInfo.paymentMethodType === 'cash'? faCreditCard : faMoneyBill} className={orderInfo.paymentMethodType === 'cash' ? "text-purple-600" : "text-gray-600"}/>
                                 </div>
                             </div>
-                            {/* Date & Items */}
+                            
                             <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-4">
                                 <span className="flex items-center gap-1.5">
                                     <FontAwesomeIcon icon={faCalendarDays} className="text-xs text-gray-400"/>
@@ -104,7 +104,7 @@ export default function OrderCard({orderInfo}: {orderInfo:Order}) {
                                     {orderInfo.shippingAddress?.city}
                                 </span>
                             </div>
-                            {/* Price and action row */}
+                            
                             <div className="flex items-center justify-between gap-4">
                                 <div>
                                     <span className="text-2xl font-bold text-gray-900">
@@ -126,10 +126,10 @@ export default function OrderCard({orderInfo}: {orderInfo:Order}) {
                         </div>
                     </div>
                 </div>
-                {/* Details */}
+                
                 {showDetails && (
                     <div className="border-t border-gray-100 bg-gray-50/50">
-                    {/* Product List */}
+                    
                     <div className="p-5 sm:p-6">
                         <h4 className="font-semibold text-gray-900 text-sm flex items-center gap-2 mb-4">
                             <div className="w-6 h-6 bg-green-100 rounded-lg flex items-center justify-center">
@@ -158,7 +158,7 @@ export default function OrderCard({orderInfo}: {orderInfo:Order}) {
                             ))}
                         </div>
                     </div>
-                    {/* Shipping & Summary */}
+                    
                     <div className="px-5 sm:px-6 pb-5 sm:pb-6 grid sm:grid-cols-2 gap-4">
                         <div className="p-4 bg-white rounded-xl border border-gray-100">
                             <h4 className="font-semibold text-gray-900 text-sm flex items-center gap-2 mb-3">
@@ -176,7 +176,7 @@ export default function OrderCard({orderInfo}: {orderInfo:Order}) {
                                 </p>
                             </div>
                         </div>
-                        {/* Order Summary */}
+                        
                         <div className={`p-4 rounded-xl bg-blue-100 border border-blue-200`}>
                             <h4 className="font-semibold text-gray-900 text-sm flex items-center gap-2 mb-3">
                                 <div className="h-6 w-6 rounded-lg bg-blue-500 flex items-center justify-center">

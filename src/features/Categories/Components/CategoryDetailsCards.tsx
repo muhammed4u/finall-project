@@ -10,7 +10,6 @@ interface Props {
                 hover:-translate-y-2 
                 overflow-hidden cursor-pointer p-8">
 
-    {/*Background */}
     <div className="absolute inset-0 bg-gradient-to-br 
                     from-green-50 via-transparent to-emerald-50 
                     opacity-0 group-hover:opacity-100 
@@ -18,7 +17,6 @@ interface Props {
 
     <div className="relative flex flex-col gap-6">
 
-        {/* Icon Block */}
         <div className="w-14 h-14 rounded-2xl 
                         bg-gradient-to-br from-emerald-500 to-green-400
                         flex items-center justify-center 
@@ -29,14 +27,12 @@ interface Props {
             <div className="w-6 h-6 bg-white rounded-md" />
         </div>
 
-        {/* Title */}
         <h3 className="text-lg font-semibold text-gray-800 
             transition-colors duration-300 
             group-hover:text-emerald-600">
             {title}
         </h3>
 
-        {/* Subtle Arrow */}
         <div className="absolute bottom-6 right-6 
                         text-emerald-500 opacity-0 
                         translate-x-3 

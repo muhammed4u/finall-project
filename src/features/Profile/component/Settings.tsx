@@ -13,8 +13,6 @@ import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-
-
 export default function Settings() {
     const { userInfo } = useSelector((appState: AppState) => appState.auth);
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -61,13 +59,12 @@ export default function Settings() {
         <>
         <div className="max-w-3xl mx-auto space-y-10">
 
-        {/* PROFILE CARD */}
         <section className="relative rounded-3xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 shadow-2xl p-10 overflow-hidden">
 
             <div className="absolute -top-24 -right-24 w-72 h-72 bg-emerald-200/30 blur-3xl rounded-full pointer-events-none"></div>
 
             <div className="relative">
-            {/* Header */}
+            
             <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center">
                 <FontAwesomeIcon icon={faUser} className="text-green-600" />
@@ -82,9 +79,8 @@ export default function Settings() {
                 </div>
             </div>
 
-            {/* Form */}
             <form className="grid gap-8" onSubmit={handleSubmit(onSubmit)}>
-                {/* Full Name */}
+                
                 <div>
                 <label
                     htmlFor="fullName"
@@ -102,7 +98,6 @@ export default function Settings() {
                 {errors.name && <p className="text-red-500 mt-0.5 text-sm">*{errors.name.message}</p>}
                 </div>
 
-                {/* Email */}
                 <div>
                 <label
                     htmlFor="email"
@@ -122,7 +117,6 @@ export default function Settings() {
                 {errors.email && <p className="text-red-500 mt-0.5 text-sm">*{errors.email.message}</p>}
                 </div>
 
-                {/* Phone */}
                 <div>
                 <label
                     htmlFor="phone"
@@ -140,7 +134,6 @@ export default function Settings() {
                 {errors.phone && <p className="text-red-500 mt-0.5 text-sm">*{errors.phone.message}</p>}
                 </div>
 
-                {/* Save Button */}
                 <div>
                 
                 <button
@@ -165,7 +158,6 @@ export default function Settings() {
                 </div>
             </form>
 
-            {/* Divider */}
             <hr className="my-12 border-gray-300" />
             <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-6">

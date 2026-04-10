@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { shippingAddressValues } from "../Schema/Checkout.schema";
 
-
     interface shippingFormProps {
         register: UseFormRegister<shippingAddressValues>,
         errors: FieldErrors<shippingAddressValues>
@@ -24,7 +23,7 @@ export default function ShippingForm({errors, register}: shippingFormProps) {
                 </p>
             </div>
             <div className="p-6 space-y-5">
-                {/* Info Banner */}
+                
                 <div className="flex flex-start gap-3 p-4 bg-blue-50 rounded-xl border border-blue-100">
                     <div className="h-8 w-8 rounded-full bg-blue-100 shrink-0 flex items-center justify-center">
                         <FontAwesomeIcon icon={faInfoCircle} className="text-blue-600 text-sm"/>
@@ -38,7 +37,7 @@ export default function ShippingForm({errors, register}: shippingFormProps) {
                         </p>
                     </div>
                 </div>
-                {/* City */}
+                
                 <div>
                     <label htmlFor="city"
                     className="block text-sm font-semibold text-gray-700 mb-2">
@@ -61,7 +60,7 @@ export default function ShippingForm({errors, register}: shippingFormProps) {
                         </p>
                     )}
                 </div>
-                {/* Address */}
+                
                 <div>
                     <label htmlFor="dtails"
                     className="block text-sm font-semibold text-gray-700 mb-2">
@@ -84,7 +83,7 @@ export default function ShippingForm({errors, register}: shippingFormProps) {
                         </p>
                     )}
                 </div>
-                {/* Phone */}
+                
                 <div>
                     <label htmlFor="phone"
                     className="block text-sm font-semibold text-gray-700 mb-2">

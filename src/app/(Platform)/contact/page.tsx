@@ -54,7 +54,6 @@ interface FormState {
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-            {/* ================= LEFT SIDE ================= */}
             <div>
 
             <h1 className="text-5xl font-bold mb-6 bg-linear-to-r from-green-600 to-emerald-400 bg-clip-text text-transparent">
@@ -95,8 +94,6 @@ interface FormState {
 
             </div>
 
-
-            {/* ================= FORM CARD ================= */}
             <div className="relative">
 
             <div className="absolute -inset-1 bg-linear-to-r from-green-400 to-emerald-400 rounded-3xl blur opacity-20"></div>
@@ -109,7 +106,6 @@ interface FormState {
 
                 <form onSubmit={handleSubmit} className="space-y-8">
 
-                {/* Floating Input */}
                 {[
                     { label: "Full Name", name: "name", type: "text" },
                     { label: "Email Address", name: "email", type: "email" }
@@ -130,7 +126,6 @@ interface FormState {
                     </div>
                 ))}
 
-                {/* Textarea */}
                 <div className="relative">
                     <textarea
                     name="message"
@@ -146,7 +141,6 @@ interface FormState {
                     </label>
                 </div>
 
-                {/* Button */}
                 <button
                     type="submit"
                     disabled={isSending}

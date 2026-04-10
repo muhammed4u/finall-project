@@ -28,13 +28,11 @@ export default function AddressCard({ address , onDelete, onEdit}: { address: Ad
 
     return (
         <div className="relative rounded-3xl bg-gradient-to-r from-white via-gray-50 to-white shadow-xl px-5 py-6 w-full hover:shadow-2xl transition-all duration-300">
-        
-        {/* Delete Button */}
+
         <button className="absolute top-4 right-4 group w-9 h-9 rounded-full flex items-center justify-center bg-gray-100 text-gray-400 transition-all duration-300 hover:bg-red-50 hover:text-red-500 hover:scale-110 hover:rotate-6">
             <FontAwesomeIcon icon={faTrash} onClick={handleDelete} className="text-sm transition-all duration-300 group-hover:scale-110" />
         </button>
 
-        {/* Edit Button */}
         <button 
         onClick={handleEdit}
             className="absolute top-16 right-4 group w-9 h-9 rounded-full flex items-center justify-center bg-gray-100 text-gray-400 transition-all duration-300 hover:bg-blue-50 hover:text-blue-500 hover:scale-110 hover:-rotate-6"
@@ -42,7 +40,6 @@ export default function AddressCard({ address , onDelete, onEdit}: { address: Ad
             <FontAwesomeIcon icon={faPen} className="text-sm transition-all duration-300 group-hover:scale-110" />
         </button>
 
-        {/* Top icon */}
         <div className="flex items-start gap-6">
             <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center shadow-inner">
                 <FontAwesomeIcon icon={faLocationDot} className="text-green-600 text-2xl" />

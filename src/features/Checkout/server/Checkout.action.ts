@@ -4,7 +4,6 @@ import axios, { AxiosRequestConfig } from "axios"
 import { cookies } from "next/headers"
 import { shippingAddressValues } from "../Schema/Checkout.schema"
 
-
 export async function createOrderCash({cartId,shippingAddress}:{cartId:string, shippingAddress: shippingAddressValues }){
     const cookieStore = await cookies()
     const token = cookieStore.get('token')?.value || null

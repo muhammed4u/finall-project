@@ -45,7 +45,7 @@ export default function CartItem({info}: {info:CartProduct}) {
         if (result.isConfirmed) {
             try {
                 const response = await removeProductFromCart({ productId: id })
-                // console.log(response)
+                
                 dispatch(setCartInfo(response)) 
                 toast.success('Item removed successfully')
             } catch (error) {
@@ -77,7 +77,7 @@ export default function CartItem({info}: {info:CartProduct}) {
             <div className="relative bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-200 p-5">
                 <div className="py-4 sm:p-5">
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                        {/* product image */}
+                        
                         <Link
                         href={''}
                         className="relative shrink-0 group">
@@ -85,13 +85,13 @@ export default function CartItem({info}: {info:CartProduct}) {
                                 <img src={imageCover} alt={title} 
                                 className="w-full h-full object-contain sm:object-contain object-cover transition-transform group-hover:scale-110 duration-300"/>
                             </div>
-                            {/* in stock badge */}
+                            
                             <div className="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] font-semibold px-2 py-0.5 rounded">
                                 <FontAwesomeIcon icon={faCheck} className="text-[]8px"/>
                                 In Stock
                             </div>
                         </Link>
-                        {/* product info */}
+                        
                         <div className="flex-1 min-w-0 flex flex-col">
                             <div className="mb-3">
                                 <Link
@@ -109,14 +109,14 @@ export default function CartItem({info}: {info:CartProduct}) {
                                     <span className="text-xs text-gray-500">SKU: {_id.slice(-6).toUpperCase()}</span>
                                 </div>
                             </div>
-                            {/* Price */}
+                            
                             <div className="mb-4">
                                 <div className="flex items-baseline gap-2">
                                     <span className="text-lg font-bold text-green-500">{price} EGP</span>
                                     <span className="text-xs text-gray-400"> per unit</span>
                                 </div>
                             </div>
-                            {/* Quantity controls action */}
+                            
                             <div className="mt-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                 <div className="flex items-center">
                                     <div className="flex items-center bg-gray-50 p-1 rounded-xl border border-gray-200">
@@ -136,7 +136,7 @@ export default function CartItem({info}: {info:CartProduct}) {
                                         </button>
                                     </div>
                                 </div>
-                                {/* line total */}
+                                
                                 <div className="flex items-center justify-between sm:justify-start gap-4 w-full sm:w-auto">
                                     <div className="text-right">
                                         <p className="text-xs text-gray-400 mb-0.5">Total</p>
@@ -145,7 +145,7 @@ export default function CartItem({info}: {info:CartProduct}) {
                                             <span className="text-sm font-medium text-gray-400">EGP</span>
                                         </p>
                                     </div>
-                                    {/* Remove Button*/}
+                                    
                                     <div className="h-10 w-10 rounded-xl border border-red-200 bg-red-50 text-red-500  hover:bg-red-500 hover:text-white hover:border-red-500 flex items-center justify-center transition-all duration-200 cursor-pointer"
                                     onClick={handleRemove}>
                                         <FontAwesomeIcon icon={faTrash} className="text-sm"/>
