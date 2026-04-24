@@ -9,34 +9,42 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="bg-white border-t border-gray-200 text-gray-700">
-        <div className="container mx-auto px-4 py-10">
-            <div className="grid md:grid-cols-2 xl:grid-cols-5 gap-8">
+        <footer className="bg-white border-t border-gray-100/50 text-gray-600 mt-20 relative overflow-hidden">
+        {/* Decorative background glow */}
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl translate-y-1/2 translate-x-1/2" />
+        
+        <div className="container relative z-10 py-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-12 lg:gap-8">
 
-            <div className="xl:col-span-2 space-y-5">
-                <Image src={freshCartLogo} alt="Fresh Cart Logo" className="w-40 transition-transform duration-300 hover:scale-105"/>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                FreshCart is a versatile e-commerce platform offering a wide range of products,
-                from clothing to electronics. Enjoy a seamless shopping experience with premium support.
-                </p>
+            <div className="xl:col-span-2 space-y-8">
+                <div className="flex flex-col gap-4">
+                    <Image src={freshCartLogo} alt="Fresh Cart Logo" className="w-48 transition-transform duration-500 hover:scale-105"/>
+                    <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Elevating your shopping experience with premium products and seamless service. From high-fashion to cutting-edge electronics, we bring the best to your doorstep.
+                    </p>
+                </div>
 
-                <ul className="flex items-center gap-4 text-lg">
-                {[faFacebookF, faTwitter, faInstagram, faPinterestP].map((icon, idx) => (
-                    <li key={idx}>
+                <div className="flex items-center gap-4">
+                {[
+                    { icon: faFacebookF, color: "hover:bg-blue-500" },
+                    { icon: faTwitter, color: "hover:bg-sky-400" },
+                    { icon: faInstagram, color: "hover:bg-pink-500" },
+                    { icon: faPinterestP, color: "hover:bg-red-600" }
+                ].map((social, idx) => (
                     <a 
+                        key={idx}
                         href="#" 
-                        className="text-gray-500 hover:text-green-500 transition-transform duration-300 transform hover:-translate-y-1 hover:scale-110"
+                        className={`size-10 flex items-center justify-center rounded-xl bg-gray-50 text-gray-400 ${social.color} hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm`}
                     >
-                        <FontAwesomeIcon icon={icon}/>
+                        <FontAwesomeIcon icon={social.icon} className="text-sm"/>
                     </a>
-                    </li>
                 ))}
-                </ul>
+                </div>
             </div>
 
-            <div>
-                <h2 className="text-xl font-bold mb-5 text-gray-900">Categories</h2>
-                <ul className="space-y-3 text-sm">
+            <div className="space-y-6">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-gray-900">Categories</h2>
+                <ul className="space-y-4 text-sm font-medium">
                 {[
                     {name: "Men's Fashion", link: "6439d5b90049ad0b52b90048"},
                     {name: "Women's Fashion", link: "6439d58a0049ad0b52b9003f"},
@@ -45,7 +53,8 @@ export default function Footer() {
                     {name: "Electronics", link: "6439d2d167d9aa4ca970649f"},
                 ].map((cat, idx) => (
                     <li key={idx}>
-                    <Link href={`/search?category=${cat.link}`} className="hover:text-green-500 transition-colors duration-200">
+                    <Link href={`/search?category=${cat.link}`} className="hover:text-emerald-500 transition-colors duration-200 flex items-center gap-2 group">
+                        <span className="w-0 h-0.5 bg-emerald-500 group-hover:w-4 transition-all duration-300"></span>
                         {cat.name}
                     </Link>
                     </li>
@@ -53,9 +62,9 @@ export default function Footer() {
                 </ul>
             </div>
 
-            <div>
-                <h2 className="text-xl font-bold mb-5 text-gray-900">Quick Links</h2>
-                <ul className="space-y-3 text-sm">
+            <div className="space-y-6">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-gray-900">Quick Links</h2>
+                <ul className="space-y-4 text-sm font-medium">
                 {[
                     {name: "About Us", link: "/about"},
                     {name: "Contact Us", link: "/contact"},
@@ -64,7 +73,8 @@ export default function Footer() {
                     {name: "Shipping Policy", link: "/shipping-policy"},
                 ].map((link, idx) => (
                     <li key={idx}>
-                    <Link href={link.link} className="hover:text-green-500 transition-colors duration-200">
+                    <Link href={link.link} className="hover:text-emerald-500 transition-colors duration-200 flex items-center gap-2 group">
+                        <span className="w-0 h-0.5 bg-emerald-500 group-hover:w-4 transition-all duration-300"></span>
                         {link.name}
                     </Link>
                     </li>
@@ -72,9 +82,9 @@ export default function Footer() {
                 </ul>
             </div>
 
-            <div>
-                <h2 className="text-xl font-bold mb-5 text-gray-900">Customer Service</h2>
-                <ul className="space-y-3 text-sm">
+            <div className="space-y-6">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-gray-900">Support</h2>
+                <ul className="space-y-4 text-sm font-medium">
                 {[
                     {name: "My Account", link: "/profile"},
                     {name: "My Orders", link: "/orders"},
@@ -83,7 +93,8 @@ export default function Footer() {
                     {name: "Help Center", link: "/help-center"},
                 ].map((link, idx) => (
                     <li key={idx}>
-                    <Link href={link.link} className="hover:text-green-500 transition-colors duration-200">
+                    <Link href={link.link} className="hover:text-emerald-500 transition-colors duration-200 flex items-center gap-2 group">
+                        <span className="w-0 h-0.5 bg-emerald-500 group-hover:w-4 transition-all duration-300"></span>
                         {link.name}
                     </Link>
                     </li>
@@ -93,11 +104,14 @@ export default function Footer() {
 
             </div>
 
-            <div className="flex flex-col md:flex-row justify-between items-center mt-10 pt-6 border-t border-gray-200 text-gray-500">
-            <p className="text-sm">&copy; {new Date().getFullYear()} FreshCart. All rights reserved.</p>
-            <Image src={freshCartMiniLogo} alt="Fresh Cart" className="w-10 mt-4 md:mt-0 transition-transform duration-300 hover:scale-110"/>
+            <div className="flex flex-col md:flex-row justify-between items-center mt-20 pt-8 border-t border-gray-100 text-gray-400">
+                <p className="text-xs font-medium">&copy; {new Date().getFullYear()} SwiftShop E-Commerce Platform. Designed for excellence.</p>
+                <div className="flex items-center gap-6 mt-6 md:mt-0">
+                    <Image src={freshCartMiniLogo} alt="Fresh Cart" className="w-8 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer"/>
+                </div>
             </div>
         </div>
+
         </footer>
     );
 }

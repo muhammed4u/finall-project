@@ -1,6 +1,6 @@
 "use client";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faEye, faLock, faSpinner, faStar, faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faEye, faLock, faSpinner, faStar, faUsers, faBolt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -58,137 +58,151 @@ export default function LoginForm() {
     return (
         <>
             <div className="w-full">
-                <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
+                <div className="bg-white/70 backdrop-blur-3xl rounded-[2.5rem] shadow-2xl p-8 lg:p-12 border border-white/50">
 
-                    <div className="text-center b-8 ">
-                        <div className="flex items-center justify-center mb-2">
-                            <span className="text-3xl font-bold text-green-500">
-                                Fresh <span className="text-gray-800">Cart</span>
+                    <div className="text-center mb-10">
+                        <div className="flex items-center justify-center gap-2 mb-4">
+                            <div className="size-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white text-xl">
+                                <FontAwesomeIcon icon={faBolt} />
+                            </div>
+                            <span className="text-4xl font-black text-gray-900 tracking-tight">
+                                Swift<span className="text-emerald-500">Shop</span>
                             </span>
                         </div>
-                        <h1 className="text-2xl font-bold text-gray-800 mb-2">Welcome Back!</h1>
-                        <p className="mb-3">Sign in to continue your fresh shopping experience</p>
+                        <h1 className="text-3xl font-black text-gray-800 mb-2 tracking-tight">Welcome Back</h1>
+                        <p className="text-gray-500 font-medium">Continue your premium shopping journey</p>
                     </div>
 
-                    <div className="space-y-3 mb-6">
+                    <div className="grid grid-cols-2 gap-4 mb-8">
                         <button
                         type="button"
                         onClick={() => signIn("google", { callbackUrl: "/" })}
-                        className="w-full flex items-center justify-center gap-3 py-3 px-4 border-2 border-gray-200"
+                        className="flex items-center justify-center gap-3 py-3.5 px-4 rounded-2xl border border-gray-100 hover:bg-gray-50 transition-all duration-300 group"
                         >
-                            <FontAwesomeIcon icon={faGoogle} className="text-red-500 text-lg"/>
-                            <span className="font-medium text-gray-700">Continue with Google</span>
+                            <FontAwesomeIcon icon={faGoogle} className="text-red-500 text-lg group-hover:scale-110 transition-transform"/>
+                            <span className="font-bold text-gray-700 text-sm">Google</span>
                         </button>
                         <button
                         type="button"
                         onClick={() => signIn("facebook", { callbackUrl: "/" })}
-                        className="w-full flex items-center justify-center gap-3 py-3 px-4 border-2 border-gray-200"
+                        className="flex items-center justify-center gap-3 py-3.5 px-4 rounded-2xl border border-gray-100 hover:bg-gray-50 transition-all duration-300 group"
                         >
-                            <FontAwesomeIcon icon={faFacebook} className="text-blue-600 text-lg"/>
-                            <span className="font-medium text-gray-700">Continue with Facebook</span>
+                            <FontAwesomeIcon icon={faFacebook} className="text-blue-600 text-lg group-hover:scale-110 transition-transform"/>
+                            <span className="font-bold text-gray-700 text-sm">Facebook</span>
                         </button>
                     </div>
 
-                    <div className="relative my-6">
+                    <div className="relative my-8">
                         <div className="absolute inset-0 flex items-center">
-                            <div className="w-full border-t border-gray-200"></div>
+                            <div className="w-full border-t border-gray-100"></div>
                         </div>
-                        <div className="relative flex justify-center text-sm">
-                            <span className="px-4 bg-white text-gray-500 font-medium">
-                                OR CONTINUE WITH EMAIL
+                        <div className="relative flex justify-center text-[10px]">
+                            <span className="px-4 bg-white text-gray-400 font-black tracking-[0.2em] uppercase">
+                                OR USE EMAIL
                             </span>
                         </div>
                     </div>
 
-                    <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
+                    <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                         <div>
                             <label 
                                 htmlFor="email"
-                                className="block text-sm font-semibold text-gray-700 mb-2"
+                                className="block text-[11px] font-black uppercase tracking-widest text-gray-400 mb-2 ml-1"
                             >
                                 Email Address
                             </label>
-                            <div className="relative">
+                            <div className="relative group">
                                 <input type="email" 
-                                    className="w-full px-4 py-3 pl-12 form-control" 
-                                    placeholder="Enter your email"
+                                    className="w-full px-5 py-4 pl-14 bg-gray-50/50 border-none rounded-2xl focus:ring-2 focus:ring-emerald-500/20 focus:bg-white transition-all duration-300 text-gray-800 font-medium outline-hidden shadow-inner" 
+                                    placeholder="name@example.com"
                                     id="email"
                                     {...register('email')}/>
-                                    <FontAwesomeIcon icon={faEnvelope}
-                                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"/>
+                                    <div className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-emerald-500 transition-colors">
+                                        <FontAwesomeIcon icon={faEnvelope} />
+                                    </div>
                             </div>
-                            {errors.email && <p className="text-red-500 mt-1">*{errors.email.message}</p>}
+                            {errors.email && <p className="text-rose-500 text-[11px] mt-2 font-bold ml-1 flex items-center gap-1">
+                                <span className="size-1 bg-rose-500 rounded-full animate-pulse" />
+                                {errors.email.message}
+                            </p>}
                         </div>
+
                         <div>
                             <div className="flex items-center justify-between mb-2">
-                            <label 
-                                htmlFor="password"
-                                className="block text-sm font-semibold text-gray-700 mb-2"
-                            >
-                                Password
-                            </label>
-                            <Link href={"/forget-password"} 
-                            className="text-sm text-green-500 hover:text-green-700 cursor-pointer ">
-                                Forgot Password?
-                            </Link>
+                                <label 
+                                    htmlFor="password"
+                                    className="block text-[11px] font-black uppercase tracking-widest text-gray-400 mb-2 ml-1"
+                                >
+                                    Password
+                                </label>
+                                <Link href={"/forget-password"} 
+                                className="text-[11px] font-black uppercase tracking-widest text-emerald-500 hover:text-emerald-600 transition-colors">
+                                    Forgot?
+                                </Link>
                             </div>
-                            <div className="relative">
+                            <div className="relative group">
                                 <input type={show? "text" : "password"} 
-                                className="w-full px-4 py-3 pl-12 form-control" 
-                                placeholder="Enter your password"
+                                className="w-full px-5 py-4 pl-14 bg-gray-50/50 border-none rounded-2xl focus:ring-2 focus:ring-emerald-500/20 focus:bg-white transition-all duration-300 text-gray-800 font-medium outline-hidden shadow-inner" 
+                                placeholder="••••••••"
                                 id="password"
                                 {...register('password')}/>
-                                <FontAwesomeIcon icon={faLock}
-                                className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"/>
+                                <div className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-emerald-500 transition-colors">
+                                    <FontAwesomeIcon icon={faLock} />
+                                </div>
                                 <button
                                 type="button"
                                 onClick={()=> setShow(!show)}
-                                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-500">
-                                    <FontAwesomeIcon icon={faEye}/>
+                                className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-emerald-500 transition-colors">
+                                    <FontAwesomeIcon icon={show ? faEye : faEye} className="text-xs opacity-50"/>
                                 </button>
                             </div>
-                            {errors.password && <p className="text-red-500 mt-1">*{errors.password.message}</p>}
+                            {errors.password && <p className="text-rose-500 text-[11px] mt-2 font-bold ml-1 flex items-center gap-1">
+                                <span className="size-1 bg-rose-500 rounded-full animate-pulse" />
+                                {errors.password.message}
+                            </p>}
                         </div>
-                        <div className="flex  items-center justify-between">
-                            <label className="flex items-center">
+
+                        <div className="flex items-center">
+                            <label className="flex items-center cursor-pointer group">
                                 <input type="checkbox" 
-                                className="h-4 w-4 text-green-500 border-2 border-gray-300 accent-green-600"
+                                className="size-5 rounded-lg border-2 border-gray-200 text-emerald-500 focus:ring-emerald-500/20 transition-all cursor-pointer"
                                 {...register('rememberMe')}/>
-                                <span className="ml-3 text-sm text-gray-700">
+                                <span className="ml-3 text-sm font-bold text-gray-600 group-hover:text-emerald-600 transition-colors">
                                     Keep me signed in
                                 </span>
                             </label>
                         </div>
+
                         <button type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-green-500 text-white py-3 px-4 rounded-xl hover:bg-green-600 transition-colors duration-200 shadow-lg hover:shadow-xl disabled:cursor-not-allowed">
+                        className="w-full bg-gray-900 text-white py-4 px-4 rounded-[1.5rem] font-black uppercase tracking-[0.2em] text-xs hover:bg-emerald-600 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 shadow-xl shadow-gray-900/10 hover:shadow-emerald-500/30 disabled:opacity-70 disabled:cursor-not-allowed">
                             {isSubmitting? 
-                            <><FontAwesomeIcon icon={faSpinner} spin className="me-2"/> <span>Signing In...</span></>:
+                            <><FontAwesomeIcon icon={faSpinner} spin className="mr-2"/> <span>Validating...</span></>:
                             <>Sign In</>}
                         </button>
                     </form>
 
-                    <div className="text-center  pt-6 border-t border-gray-100">
-                        <p className="text-gray-600">
-                            New to FreshCart?
-                            <Link href="/signup" className="text-green-500 hover:text-green-600 ms-2 font-semibold cursor-pointer underline">
-                                Create an account
+                    <div className="text-center pt-8 mt-8 border-t border-gray-50">
+                        <p className="text-sm font-bold text-gray-400">
+                            Don't have an account?
+                            <Link href="/signup" className="text-emerald-500 hover:text-emerald-600 ml-2 transition-colors">
+                                Create one for free
                             </Link>
                         </p>
                     </div>
 
-                    <div className="flex items-center justify-center space-x-6 mt-6 text-xs text-gray-500">
-                        <div className="flex items-center">
-                            <FontAwesomeIcon icon={faLock} className="mr-1"/>
-                            SSL Secured
+                    <div className="flex items-center justify-center gap-8 mt-10 text-[10px] font-black uppercase tracking-widest text-gray-300">
+                        <div className="flex items-center gap-1.5 hover:text-emerald-500 transition-colors cursor-default">
+                            <FontAwesomeIcon icon={faLock} />
+                            <span>SSL Secure</span>
                         </div>
-                        <div className="flex items-center">
-                            <FontAwesomeIcon icon={faUsers} className="mr-1"/>
-                            SSL Secured
+                        <div className="flex items-center gap-1.5 hover:text-emerald-500 transition-colors cursor-default">
+                            <FontAwesomeIcon icon={faUsers} />
+                            <span>Premium Support</span>
                         </div>
-                        <div className="flex items-center">
-                            <FontAwesomeIcon icon={faStar} className="mr-1"/>
-                            SSL Secured
+                        <div className="flex items-center gap-1.5 hover:text-emerald-500 transition-colors cursor-default">
+                            <FontAwesomeIcon icon={faStar} />
+                            <span>Top Rated</span>
                         </div>
                     </div>
                 </div>

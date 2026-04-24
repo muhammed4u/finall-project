@@ -106,7 +106,7 @@ export default async function RootLayout({
     <head>
     <link rel="icon" type="image/svg+xml" href={icon.src}/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fresh Cart</title>
+    <title>SwiftShop | Premium E-Commerce</title>
   </head>
       <body
         className={`${exo.className} font-medium`}

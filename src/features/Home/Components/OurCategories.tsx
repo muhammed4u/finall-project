@@ -8,38 +8,51 @@ export default async function OurCategories() {
     const response = await getAllCategories()
     return (
         <>
-            <section id="categories" className="py-10">
-                <div className="container mx-auto px-4">
-                    <div className="flex justify-between items-center mb-8">
-                        <div className="flex items-center gap-3 my-8">
-                            <div className="h-8 w-1.5 bg-linear-to-b from-emerald-500 to-emerald-700 rounded-full"></div>
-                            <h2 className="text-3xl font-bold text-gray-800">
+            <section id="categories" className="py-24 bg-gray-50/50">
+                <div className="container mx-auto px-6">
+                    {/* Section Header */}
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                        <div className="space-y-2">
+                            <h2 className="text-4xl font-bold text-gray-900 tracking-tight">
                                 Shop by <span className="text-emerald-600">Category</span>
                             </h2>
+                            <p className="text-gray-500 font-medium">Explore our wide range of premium collections</p>
                         </div>
                         <Link href={'/categories'}
-                        className="text-green-600 hover:text-green-700 font-medium flex items-center cursor-pointer">
-                            View All Categories
-                            <FontAwesomeIcon icon={faArrowRight} className="ml-2"/>
+                        className="group flex items-center gap-2 text-emerald-600 font-bold hover:text-emerald-700 transition-colors cursor-pointer">
+                            <span>Browse All Categories</span>
+                            <FontAwesomeIcon icon={faArrowRight} className="text-xs group-hover:translate-x-1 transition-transform"/>
                         </Link>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    {/* Categories Grid */}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-6">
                         {
                             response.data.map((category)=>(
                                 <Link
                                 href={`/search?category=${category._id}`} key={category._id}
-                                className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition group cursor-pointer">
-                                    <div className="h-20 w-20 overflow-hidden bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                                className="group flex flex-col items-center bg-white border border-gray-100 rounded-3xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-100 cursor-pointer"
+                                >
+                                    <div className="relative size-32 mb-4 rounded-2xl overflow-hidden bg-gray-50 transition-transform duration-500 group-hover:scale-105">
                                         <Image
-                                        width={300}
-                                        height={300}
+                                        width={200}
+                                        height={200}
                                         src={category.image}
                                         alt={category.name}
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
+                                        {/* Overlay Glow */}
+                                        <div className="absolute inset-0 bg-emerald-500/0 group-hover:bg-emerald-500/5 transition-colors" />
                                     </div>
-                                    <h3 className="font-medium">{category.name}</h3>
+
+                                    <div className="text-center">
+                                        <h3 className="font-bold text-gray-800 text-sm group-hover:text-emerald-600 transition-colors">
+                                            {category.name}
+                                        </h3>
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            Explore
+                                        </span>
+                                    </div>
                                 </Link>
                             ))
                         }

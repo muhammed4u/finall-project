@@ -2,70 +2,117 @@
 
 @theme {
     --animate-slide-in: slide-in 300ms ease-out ;
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+    --animate-liquid: liquid 10s ease-in-out infinite;
 }
+
 @keyframes slide-in {
-    from {
-        transform: translateX(-100%)
-    }
-    to{
-        transform: translateX((0))
-    }
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.4); }
+}
+
+@keyframes liquid {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
 }
 
 @layer base {
-    a , span {
+    :root {
+        --primary: #10b981;
+        --primary-dark: #059669;
+        --primary-light: #34d399;
+        --glass-bg: rgba(255, 255, 255, 0.7);
+        --glass-border: rgba(255, 255, 255, 0.3);
+    }
+
+    a, span {
         @apply inline-block;
     }
     button, a {
         cursor: pointer;
     }
+    body {
+        @apply bg-gray-50/50 text-gray-900;
+        background-image: 
+            radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+            radial-gradient(at 100% 0%, rgba(52, 211, 153, 0.05) 0px, transparent 50%);
+    }
 }
 
 @layer components {
     .btn {
-        @apply px-4 py-2 rounded-xl bg-gray-200 text-gray-900 font-semibold hover:bg-gray-300 transition-colors duration-200;
+        @apply px-6 py-2.5 rounded-2xl font-semibold transition-all duration-300 active:scale-95 flex items-center justify-center gap-2;
     }
-    .form-control{
-        @apply px-3 py-2 rounded-md border border-gray-400/40 focus:outline-none focus:border-green-600 focus:bg-green-50/70
+    .btn-primary {
+        @apply bg-emerald-500 text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-600 hover:shadow-emerald-500/40;
+    }
+    .btn-glass {
+        @apply bg-white/40 backdrop-blur-md border border-white/40 text-emerald-600 hover:bg-white/60 hover:border-white/60;
+    }
+    .form-control {
+        @apply px-4 py-3 rounded-xl border border-gray-200/60 bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all duration-200;
+    }
+    .glass-card {
+        @apply bg-white/60 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-[2rem] overflow-hidden transition-all duration-700 ease-in-out;
+    }
+    .glass-card:hover {
+        @apply border-white/60 shadow-[0_8px_32px_0_rgba(16,185,129,0.15)] bg-white/80;
     }
 }
 
 @utility container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    @apply mx-auto px-4 sm:px-8 lg:px-16;
+}
+
+/* Liquid Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+    @apply bg-emerald-500/10 rounded-full hover:bg-emerald-500/30 transition-colors;
 }
 
 .swiper-pagination-bullet {
-    width: 12px !important;
-    height: 12px !important;
-    background: rgba(255,255,255,0.5) !important;
+    width: 6px !important;
+    height: 6px !important;
+    background: rgba(16, 185, 129, 0.2) !important;
     opacity: 1 !important;
-    transition: all 0.3s ease;
-}
-
-.swiper-pagination-bullet:hover{
-    background: rgba(255,255,255,0.8) !important;
-    transform: scale(1.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
 .swiper-pagination-bullet-active {
-    background: rgba(255,255,255,1) !important;
-    width: 32px !important;
-    border-radius: 6px !important;
-} 
+    background: #10b981 !important;
+    width: 20px !important;
+    border-radius: 10px !important;
+}
 
 @keyframes spin-slow {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
-    }
+}
 
-    .animate-spin-slow {
-    animation: spin-slow 6s linear infinite;
+.animate-spin-slow {
+    animation: spin-slow 15s linear infinite;
 }
 
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -74,34 +121,22 @@
 }
 
 .animate-slideUp {
-    animation: slideUp 0.8s ease forwards;
-}
-
-.delay-200 {
-    animation-delay: 0.2s;
-}
-
-.delay-400 {
-    animation-delay: 0.4s;
+    animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes bgZoom {
     from { transform: scale(1); }
-    to { transform: scale(1.05); }
+    to { transform: scale(1.08); }
 }
 
 .animate-bgZoom {
-    animation: bgZoom 6s ease-in-out infinite alternate;
+    animation: bgZoom 15s ease-in-out infinite alternate;
 }
 
 @keyframes cardReveal {
     0% {
-    opacity: 0;
-        transform: translateY(40px) scale(0.95);
-    }
-    60% {
-        opacity: 1;
-        transform: translateY(-6px) scale(1.02);
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
     }
     100% {
         opacity: 1;
@@ -109,30 +144,22 @@
     }
 }
 
-.card-hidden {
-    opacity: 0;
+.card-visible {
+    animation: cardReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.card-visible {
-    animation: cardReveal 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 40px;
 }
 
-@keyframes pulseSlow {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.4;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.6;
-    }
+.liquid-shape {
+    animation: liquid 10s ease-in-out infinite;
 }
-.animate-pulseSlow {
-    animation: pulseSlow 5s ease-in-out infinite;
+
+.glass-navbar {
+    @apply bg-white/60 backdrop-blur-3xl border-b border-white/20;
 }
+
+
