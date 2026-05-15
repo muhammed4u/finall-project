@@ -3,6 +3,7 @@ import { faEye, faHeart as faHeartRegular   } from "@fortawesome/free-regular-sv
 import { faCheck, faPlus , faHeart as faHeartSolid, faBolt, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import Image from "next/image";
 import { Product } from "../Types/Products.types";
 import Ratings from "@/components/ui/Ratings";
 import { toast } from "react-toastify";
@@ -19,12 +20,15 @@ export default function ProductCard({info}: {info:Product}) {
     const { addToCart, isLoading } = useAddToCart();
     const [isAdded, setIsAdded] = useState(false);
 
-    const {id, imageCover,price, priceAfterDiscount, ratingsAverage , title, category, ratingsQuantity} = info
+    const { _id: id, imageCover, price, priceAfterDiscount, ratingsAverage, title, category, ratingsQuantity } = info;
+    
+    // Check if the product has an active discount
     const onSale = priceAfterDiscount ? price > priceAfterDiscount : false
     const discountPercentage = priceAfterDiscount? Math.round((price - priceAfterDiscount)/price * 100) : null
 
     const wishlistItems = useSelector((state: AppState) => state.wishlist.data);
-    const isInWishlist = wishlistItems.some(item => item.id === id);
+    const isAuthenticated = useSelector((state: AppState) => state.auth.isAuthenticated);
+    const isInWishlist = wishlistItems.some(item => (item._id || item.id) === id);
 
         useEffect(() => {
         const cart = JSON.parse(localStorage.getItem("myCart") || "[]");
@@ -34,19 +38,31 @@ export default function ProductCard({info}: {info:Product}) {
     }, [id]);
 
     const handleAddToCart = async () => {
-    const cart = JSON.parse(localStorage.getItem("myCart") || "[]");
+        if (!isAuthenticated) {
+            toast.info("Please log in to add products to your cart");
+            return;
+        }
+
+        // We sync cart data to local storage for quick access without fetching
+        const cart = JSON.parse(localStorage.getItem("myCart") || "[]");
         if (!cart.includes(id)) {
             cart.push(id);
             localStorage.setItem("myCart", JSON.stringify(cart));
         }
-    const success = await addToCart(id);
+        
+        const success = await addToCart(id);
 
-    if (success) {
-        setIsAdded(true);
-    }
+        if (success) {
+            setIsAdded(true);
+        }
     };
 
     const handleToggleWishlist = async () => {
+        if (!isAuthenticated) {
+            toast.info("Please log in to manage your wishlist");
+            return;
+        }
+
         try {
             if (isInWishlist) {
             await removeProductFromWishlist({ productId: id });
@@ -60,8 +76,8 @@ export default function ProductCard({info}: {info:Product}) {
                 dispatch(setWishlistInfo(wishlistInfo));
             }
             }
-        } catch (error) {
-            toast.error("Wishlist action failed");
+        } catch (error: any) {
+            toast.error(error?.message || "Wishlist action failed");
         }
         };
     return (
@@ -75,10 +91,12 @@ export default function ProductCard({info}: {info:Product}) {
             {/* Image Section */}
             <Link href={`/products/${id}`} className="relative p-4 overflow-hidden cursor-pointer block">
                 <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-gray-50/50 group-hover:bg-white transition-all duration-700 shadow-inner">
-                    <img 
+                    <Image 
                         src={imageCover} 
                         alt={title}
-                        className="w-full h-full object-contain p-8 group-hover:scale-110 group-hover:rotate-2 transition-all duration-1000 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-contain p-8 group-hover:scale-110 group-hover:rotate-2 transition-all duration-1000 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
                     />
                     
                     {/* Liquid Shine Overlay */}
@@ -103,7 +121,12 @@ export default function ProductCard({info}: {info:Product}) {
                 {/* High-End Action Menu */}
                 <div className="absolute top-7 right-7 flex flex-col gap-3 translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                     <button
-                        onClick={(e) => { e.preventDefault(); handleToggleWishlist(); }}
+                        suppressHydrationWarning
+                        onClick={(e) => { 
+                            e.preventDefault(); 
+                            e.stopPropagation(); 
+                            handleToggleWishlist(); 
+                        }}
                         className={`size-10 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-2xl backdrop-blur-xl border ${
                             isInWishlist 
                             ? "bg-rose-500 border-rose-500 text-white" 
@@ -147,7 +170,12 @@ export default function ProductCard({info}: {info:Product}) {
                     </div>
 
                     <button
-                        onClick={(e) => { e.preventDefault(); handleAddToCart(); }}
+                        suppressHydrationWarning
+                        onClick={(e) => { 
+                            e.preventDefault(); 
+                            e.stopPropagation();
+                            handleAddToCart(); 
+                        }}
                         disabled={isAdded}
                         className={`size-12 flex items-center justify-center rounded-2xl transition-all duration-500 shadow-2xl ${
                             isAdded 

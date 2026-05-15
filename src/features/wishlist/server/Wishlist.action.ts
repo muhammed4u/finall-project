@@ -9,7 +9,7 @@ export async function addProductToWishlist({productId}: {productId:string}):Prom
     const token = cookieStore.get('token')?.value || null
 
     if(!token){
-        throw new Error("Authentication Error")
+        throw new Error("Authentication Error: Please sign in with an email and password to use this feature. Social login is not supported by the store API.")
     }
 
     try {
@@ -21,8 +21,9 @@ export async function addProductToWishlist({productId}: {productId:string}):Prom
     }
     const {data} = await axios.request(options)
     return data
-    } catch (error) {
-        throw error
+    } catch (error: any) {
+        console.error("Add to wishlist error:", error?.response?.data || error);
+        throw new Error(error?.response?.data?.message || "Failed to add product to wishlist");
     }
 }
 
@@ -31,7 +32,7 @@ export async function getLoggedUserWishlist():Promise<ProductsResponse>{
     const token = cookieStore.get('token')?.value || null
 
     if(!token){
-        throw new Error("Authentication Error")
+        throw new Error("Authentication Error: Please sign in with an email and password to use this feature. Social login is not supported by the store API.")
     }
 
     try {
@@ -44,8 +45,9 @@ export async function getLoggedUserWishlist():Promise<ProductsResponse>{
     
     return data
     
-    } catch (error) {
-        throw error
+    } catch (error: any) {
+        console.error("Get wishlist error:", error?.response?.data || error);
+        throw new Error(error?.response?.data?.message || "Failed to fetch wishlist");
     }
 }
 
@@ -54,7 +56,7 @@ export async function removeProductFromWishlist({productId} : {productId: string
     const token = cookieStore.get('token')?.value || null
 
     if(!token){
-        throw new Error("Authentication Error")
+        throw new Error("Authentication Error: Please sign in with an email and password to use this feature. Social login is not supported by the store API.")
     }
 
     try {
@@ -66,8 +68,9 @@ export async function removeProductFromWishlist({productId} : {productId: string
     const {data} = await axios.request(options)
     return data
     
-    } catch (error) {
-        throw error
+    } catch (error: any) {
+        console.error("Remove from wishlist error:", error?.response?.data || error);
+        throw new Error(error?.response?.data?.message || "Failed to remove product from wishlist");
     }
 }
 

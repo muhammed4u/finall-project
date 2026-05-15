@@ -9,7 +9,7 @@ export async function addProductToCart({productId}: {productId:string}){
     const token = cookieStore.get('token')?.value || null
 
     if(!token){
-        throw new Error("Authentication Error")
+        throw new Error("Authentication Error: Please sign in with an email and password to use this feature. Social login is not supported by the store API.")
     }
 
     try {
@@ -31,7 +31,7 @@ export async function getLoggedUserCart():Promise<CartResponse>{
     const token = cookieStore.get('token')?.value || null
 
     if(!token){
-        throw new Error("Authentication Error")
+        throw new Error("Authentication Error: Please sign in with an email and password to use this feature. Social login is not supported by the store API.")
     }
 
     try {
@@ -54,7 +54,7 @@ export async function removeProductFromCart({productId} : {productId: string} ):
     const token = cookieStore.get('token')?.value || null
 
     if(!token){
-        throw new Error("Authentication Error")
+        throw new Error("Authentication Error: Please sign in with an email and password to use this feature. Social login is not supported by the store API.")
     }
 
     try {
@@ -76,7 +76,7 @@ export async function updateProductQuantity(productId: string , count: number ):
     const token = cookieStore.get('token')?.value || null
 
     if(!token){
-        throw new Error("Authentication Error")
+        throw new Error("Authentication Error: Please sign in with an email and password to use this feature. Social login is not supported by the store API.")
     }
 
     try {
@@ -99,7 +99,7 @@ export async function clearAllProductsFromCart(){
     const token = cookieStore.get('token')?.value || null
 
     if(!token){
-        throw new Error("Authentication Error")
+        throw new Error("Authentication Error: Please sign in with an email and password to use this feature. Social login is not supported by the store API.")
     }
 
     try {

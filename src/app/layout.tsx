@@ -33,13 +33,21 @@ const exo = Exo({
   weight: ["400","500", "600", "700", "800", "900"],
 });
 
+export const metadata: Metadata = {
+  title: "SwiftShop | Premium E-Commerce",
+  description: "Elevating your shopping experience with premium products and seamless service.",
+  icons: {
+    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310b981' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/%3E%3C/svg%3E",
+  },
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
 
-  // cart state to hold items
+  // Initialize default states to handle hydration gracefully
   let cartState:CartState = {
     cartId: null,
     numOfCartItems: 0,
@@ -61,7 +69,7 @@ export default async function RootLayout({
     };
   }
   
-  // check if user is logged in
+  // If user is authenticated, we pre-fetch their cart data for immediate availability on client
   if(authValues.isAuthenticated){
     try {
       const cartResponse = await getLoggedUserCart()
@@ -97,17 +105,12 @@ export default async function RootLayout({
       }
       
     } catch (error) {
-      
+      console.error("Failed to fetch user wishlist during initial load", error);
     }
   }
 
   return (
     <html lang="en" suppressHydrationWarning>
-    <head>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310b981' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/%3E%3C/svg%3E"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SwiftShop | Premium E-Commerce</title>
-  </head>
       <body
         className={`${exo.className} font-medium`}
         suppressHydrationWarning

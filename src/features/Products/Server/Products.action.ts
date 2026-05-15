@@ -35,12 +35,13 @@ export async function getProducts(filters?: GetProductsFilters):Promise<Products
         const options:AxiosRequestConfig = {
             url: 'https://ecommerce.routemisr.com/api/v1/products',
             method: 'GET',
-            params
+            params,
+            timeout: 5000
         }
         const {data} = await axios.request(options);
         return data;
     } catch (error) {
-        throw error
+        return { results: 0, metadata: { currentPage: 1, numberOfPages: 1, limit: 10 }, data: [] };
     }
 }
 

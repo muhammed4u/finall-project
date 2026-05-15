@@ -6,6 +6,7 @@ import {
     faGift,
     faPercent,
     faBolt,
+    faExclamationCircle
     } from "@fortawesome/free-solid-svg-icons";
     import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -14,6 +15,7 @@ import {
     const [isVisible, setIsVisible] = useState(false);
     const [email, setEmail] = useState("");
     const [subscribed, setSubscribed] = useState(false);
+    const [error, setError] = useState("");
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -31,7 +33,19 @@ import {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!email) return;
+        
+        if (!email.trim()) {
+            setError("Please enter your email address to subscribe");
+            return;
+        }
+        
+        // Basic email validation regex
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            setError("Please enter a valid email address");
+            return;
+        }
+
+        setError("");
         setSubscribed(true);
         setEmail("");
     };
@@ -70,18 +84,29 @@ import {
                 sales, and exclusive perks.
             </p>
 
-            <form className="flex flex-col sm:flex-row gap-4 w-full md:w-auto" onSubmit={handleSubmit}>
-                <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1 px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
-                />
-                <button className="px-8 py-3 rounded-xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition">
-                Subscribe
-                </button>
+            <form className="flex flex-col gap-2 w-full md:w-auto" onSubmit={handleSubmit} noValidate>
+                <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto relative">
+                    <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (error) setError("");
+                        if (subscribed) setSubscribed(false);
+                    }}
+                    className={`flex-1 px-5 py-3 rounded-xl border focus:outline-none focus:ring-2 transition ${error ? "border-red-400 focus:ring-red-400 bg-red-50" : "border-gray-200 focus:ring-emerald-400"}`}
+                    />
+                    <button className="px-8 py-3 rounded-xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition shadow-lg shadow-emerald-500/30">
+                    Subscribe
+                    </button>
+                </div>
+                {error && (
+                    <div className="flex items-center gap-2 text-red-500 text-sm font-medium mt-1 animate-pulse px-2">
+                        <FontAwesomeIcon icon={faExclamationCircle} />
+                        <span>{error}</span>
+                    </div>
+                )}
             </form>
 
             {subscribed && (

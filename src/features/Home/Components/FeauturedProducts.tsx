@@ -5,12 +5,11 @@ import StaggerReveal from "./Animation/products"
 export default async function FeauturedProducts() {
     const response = await getProducts()
     return (
-        <>
-        <section className="py-24 bg-white relative">
-            {/* Soft decorative background */}
+        <section className="py-24 bg-white relative overflow-hidden">
+            {/* Soft decorative background - Gives the section a premium feel */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-linear-to-b from-gray-50/50 to-white pointer-events-none" />
 
-            <div className="container mx-auto relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div className="space-y-2">
                         <div className="flex items-center gap-3">
@@ -29,9 +28,10 @@ export default async function FeauturedProducts() {
                     </div>
                 </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+            {/* Responsive grid: 1 col on mobile, 2 on small tablets, 3 on tablets, 4-5 on larger screens */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8">
             {
-                response.data.map((Product, index) => (
+                response.data.map((Product) => (
                 <StaggerReveal key={Product._id}>
                     <ProductCard info={Product} />
                 </StaggerReveal>
@@ -40,7 +40,5 @@ export default async function FeauturedProducts() {
             </div>
             </div>
         </section>
-        
-        </>
     )
 }

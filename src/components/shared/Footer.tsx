@@ -1,10 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import freshCartLogo from "../../assets/images/freshcart-logo.svg";
-import freshCartMiniLogo from "../../assets/images/mini-logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram, faPinterestP, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faBolt } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 export default function Footer() {
@@ -18,7 +16,14 @@ export default function Footer() {
 
             <div className="xl:col-span-2 space-y-8">
                 <div className="flex flex-col gap-4">
-                    <Image src={freshCartLogo} alt="Fresh Cart Logo" className="w-48 transition-transform duration-500 hover:scale-105"/>
+                    <Link href="/" className="flex items-center gap-3 group w-fit">
+                        <div className="size-11 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-emerald-500/30 group-hover:rotate-12 transition-transform duration-500">
+                            <FontAwesomeIcon icon={faBolt} className="text-xl" />
+                        </div>
+                        <h1 className="text-3xl font-black text-gray-900 tracking-tight">
+                            Swift<span className="text-emerald-500">Shop</span>
+                        </h1>
+                    </Link>
                     <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
                         Elevating your shopping experience with premium products and seamless service. From high-fashion to cutting-edge electronics, we bring the best to your doorstep.
                     </p>
@@ -107,7 +112,9 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row justify-between items-center mt-20 pt-8 border-t border-gray-100 text-gray-400">
                 <p className="text-xs font-medium">&copy; {new Date().getFullYear()} SwiftShop E-Commerce Platform. Designed for excellence.</p>
                 <div className="flex items-center gap-6 mt-6 md:mt-0">
-                    <Image src={freshCartMiniLogo} alt="Fresh Cart" className="w-8 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer"/>
+                    <Link href="/" className="size-8 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 hover:bg-emerald-500 hover:text-white transition-all duration-500 shadow-sm cursor-pointer group">
+                        <FontAwesomeIcon icon={faBolt} className="text-sm group-hover:scale-110 transition-transform" />
+                    </Link>
                 </div>
             </div>
         </div>

@@ -46,7 +46,8 @@ export async function verifyToken(): Promise<AuthState>{
         const options:AxiosRequestConfig ={
             url: 'https://ecommerce.routemisr.com/api/v1/auth/verifyToken',
             method: 'GET',
-            headers: {token}
+            headers: {token},
+            timeout: 5000
         }
         const {data} = await axios.request(options)
         if(data.message === 'verified'){

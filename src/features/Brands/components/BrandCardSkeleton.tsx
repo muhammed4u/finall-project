@@ -2,14 +2,8 @@
 
 export default function BrandCardSkeleton() {
     return (
-        <div className="bg-gray-100 rounded-3xl p-6 border border-gray-200
-                        shadow-[0_8px_30px_rgb(0,0,0,0.04)]
-                        animate-pulse">
-
-        <div className="bg-gray-200 rounded-2xl h-36 
-                        border border-gray-100 
-                        flex items-center justify-center">
-
+        <div className="bg-gray-100 rounded-3xl p-6 border border-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] animate-pulse">
+        <div className="bg-gray-200 rounded-2xl h-36 border border-gray-100 flex items-center justify-center">
             <div className="w-20 h-12 bg-gray-300 rounded-md" />
         </div>
 

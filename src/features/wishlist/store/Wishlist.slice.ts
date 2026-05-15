@@ -25,9 +25,9 @@ const wishlistSlice = createSlice({
         },
         removeWishlistItem: (state, action: PayloadAction<{id: string}>) => {
         const productId = action.payload.id
-        const removedProduct = state.data.find((item)=> item.id == productId)
+        const removedProduct = state.data.find((item)=> (item._id || item.id) === productId)
         if(removedProduct){
-            state.data = state.data.filter((item)=> item.id !== productId)
+            state.data = state.data.filter((item)=> (item._id || item.id) !== productId)
             state.count = state.data.length
         } 
     },
@@ -35,7 +35,7 @@ const wishlistSlice = createSlice({
             state.isLoading = action.payload
         },
         addWishlistItem: (state, action: PayloadAction<Product>) => {
-            const exists = state.data.find(item => item.id === action.payload.id)
+            const exists = state.data.find(item => (item._id || item.id) === (action.payload._id || action.payload.id))
             if (!exists) {
                 state.data.push(action.payload)
                 state.count = state.data.length
